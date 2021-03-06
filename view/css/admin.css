@@ -52,6 +52,7 @@ nav{
 nav ul{
     float: right;
     margin-right: 20px;
+    display: inline-block; 
     
 }
 nav ul li{
@@ -117,6 +118,9 @@ a.active,a:hover{
         transition: all .5s;
 
     }
+    .logout{
+         background: black;
+     }
 
     nav ul li{
         display: block;
@@ -137,6 +141,10 @@ a.active,a:hover{
     #check:checked ~ ul{
         left: 0;
     }
+    #check:checked ~ .logout{
+        left: 0;
+    }
+    
     
 }
 
@@ -166,7 +174,7 @@ section{
 .box{
     width: 11%;
     height: 103px;
-    background: red;
+    background: skyblue;
     margin: 20px;
     box-sizing: border-box;
     font-size: 50px;
