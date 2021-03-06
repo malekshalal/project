@@ -1,30 +1,18 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])){
-    header("location:login.php");
-    die();
-  }
-?>
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../view/css/image/logo.png">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="../view/css/admin.css">
-    <title>مدير الشركة/Taqaddom Scales Co. Lts.</title>
+    <link rel="stylesheet" href="../view/css/navadmin.css">
+    <title>Document</title>
 </head>
 <body>
-    <?php
-        include 'navadmin.php'
-    ?>
-   
-   
-  <!--   <nav  >
+<nav  >
         <input type="checkbox" name="" id="check">
         <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
@@ -35,7 +23,7 @@ if (!isset($_SESSION['username'])){
             <li><a class="active" href="#">المنتجات</a></li>
             <li><a href="#">منتج مخصص</a></li>
             <li><a href="#">اضافة مستخدم</a></li>
-            <li style="float:left" ><a href="../logout.php">تسجيل الخروج</a></li>
+            <li style="background: #00000091;height: 74px;" ><a href="../logout.php">تسجيل الخروج</a></li>
             
             
             
@@ -44,28 +32,6 @@ if (!isset($_SESSION['username'])){
              
         </ul>
        
-    </nav> -->
-    <section>
-        
-    <div class="container">
-        
-        <div class="box" ><h4><a href="#">موازين</a></h4></div>
-        <div class="box"><a href="#">خزاين</a></div>
-        
-        
-
-
-    </div>
-    </section>
-
-
-   
-   
-    
-
-    
-   
-
-    
+    </nav>
 </body>
 </html>
