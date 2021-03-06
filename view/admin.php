@@ -46,7 +46,7 @@ if (!isset($_SESSION['username'])){
         
     <div class="container">
         
-        <div class="box"><h4><a href="#">موازين</a></h4></div>
+        <div class="box" ><h4><a href="#">موازين</a></h4></div>
         <div class="box"><a href="#">خزاين</a></div>
         <div class="box"></div>
         <div class="box"></div>
