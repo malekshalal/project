@@ -1,0 +1,65 @@
+.header{
+
+ background-color:rgb(63, 128, 212);
+    overflow: hidden;
+     height: 50px;
+    width: 100%;
+    color: white;
+    text-align: center;
+
+
+
+}
+
+body{
+    margin: 0;
+}
+
+@media screen and (min-width: 1000px) {
+
+
+    /* to perfect image in all screen size  */
+   html { 
+      
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   }
+   
+   
+   BUTTON{
+    background-color: rgb(0,0,0);
+    border-radius:5px;
+    height: 100%;
+    
+   }
+   a{
+    text-decoration:none;
+    color: white
+   }
+   
+   
+   
+   
+   /*22222222222222222222222222222222222222222222222222 */
+   @media screen and (max-width: 999px )  {
+   
+   
+    /* to perfect image in all screen size  */
+   html { 
+      
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   
+   }

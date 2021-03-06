@@ -1,0 +1,191 @@
+body{
+    margin: 0;
+}
+/* .header{
+
+    background-color:rgb(63, 128, 212);
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    color: white;
+    text-align: center;
+   
+   
+   
+}
+
+
+BUTTON{
+    background-color: rgb(0,0,0);
+    border-radius:5px;
+    height: 100%;
+    float: left;
+    
+    
+    
+}
+a{
+    text-decoration:none;
+    color: white
+} */
+/*--------------------------------------------------------*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: monospace;
+}
+nav{
+    background-color:rgb(63, 128, 212);
+    height: 74px;
+    width: 100%;
+
+}
+
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0px 5px;
+     /* float: left; */
+}
+nav ul li a{
+    color:white;
+    font-size: 17px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 7px 13px;
+    border-radius: 3px;
+
+}
+a.active,a:hover{
+    background: #1b9bff;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: left;
+    line-height: 8px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+    font-size: 70px;
+
+}
+
+
+
+#check{
+    display: none;
+}
+@media(max-width: 952px){
+    
+    nav ul li a{
+        font-size:16px ;
+    }
+}
+
+
+
+@media(max-width: 858px){
+    .checkbtn{
+        display: block;
+        
+
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left:-100%;
+        text-align: center;
+        transition: all .5s;
+
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover,a.active{
+        background:none ;
+        color: #0082e6;
+
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    
+}
+
+
+section{
+    background:rgba(135, 235, 235, 0.1) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100.8vh - 80px);
+}
+/*---------------   style div */
+
+
+
+
+
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+
+}
+.box{
+    width: 11%;
+    height: 103px;
+    background: red;
+    margin: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+    display: inline-block   ;
+    
+}
+
+.box h4{
+    text-align: center;
+    margin: 22px;
+}
+
+@media screen and (max-width:1200px){
+    .box{
+        width: 25%;
+
+    }
+}
+@media screen and (max-width:600px){
+    .box{
+        width: 90%;
+
+    }
+}
+
