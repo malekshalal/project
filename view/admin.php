@@ -14,43 +14,46 @@ if (!isset($_SESSION['username'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../view/css/image/logo.png">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+    
     <link rel="stylesheet" href="../view/css/admin.css">
     <title>مدير الشركة/Taqaddom Scales Co. Lts.</title>
 </head>
 <body>
     <?php
-        include 'navadmin.php'
+        include 'navadmin.php';
+        $conn=mysqli_connect("localhost","root","","app");
+        $query="SELECT * FROM category  ";
+        $result=mysqli_query($conn,$query);
+        $x=0;
+        
     ?>
    
-   
-  <!--   <nav  >
-        <input type="checkbox" name="" id="check">
-        <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-        </label>
-        <label for="" class="logo"><img  alt=""   src="../view/css/image/logo.png" style="width: 77px;height: 83%; float: right;border:1px white solid ;border-radius: 8px;background: rgba(255,255,255,0.1);margin-top: 5px;margin-right:5px "></label>
-        <ul>
-            
-            <li><a class="active" href="#">المنتجات</a></li>
-            <li><a href="#">منتج مخصص</a></li>
-            <li><a href="#">اضافة مستخدم</a></li>
-            <li style="float:left" ><a href="../logout.php">تسجيل الخروج</a></li>
-            
-            
-            
-            
-
-             
-        </ul>
-       
-    </nav> -->
     <section>
         
     <div class="container">
+
+    
+        <?php
+       if (mysqli_num_rows($result)>0){
+        while( $category=mysqli_fetch_assoc($result)){
+            
+            
+            ?>
+            
+            
+            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id=<?php echo $category['id'];?>"><?php echo $category['name'];?></a></h4></div>
+        <?php
+        }
+        ?>
+         <?php
+         }else{
+            echo '<script type="text/javascript">';
+            echo 'window.alert("لا يوجد منتجات حاليا")';  
+            echo '</script>';  
+         }
+         ?>
         
-        <div class="box" ><h4><a href="#">موازين</a></h4></div>
-        <div class="box"><a href="#">خزاين</a></div>
+        
         
         
 

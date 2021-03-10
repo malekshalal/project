@@ -29,6 +29,8 @@ nav ul li{
     line-height: 80px;
     margin: 0px 5px;
     float: right;
+    
+    
      
 }
 nav ul li a{
@@ -110,9 +112,7 @@ a.active,a:hover{
     #check:checked ~ ul{
         left: 0;
     }
-    #check:checked ~ .logout{
-        left: 0;
-    }
+   
     
     
 }

@@ -1,34 +1,7 @@
 body{
     margin: 0;
 }
-/* .header{
 
-    background-color:rgb(63, 128, 212);
-    overflow: hidden;
-    height: 50px;
-    width: 100%;
-    color: white;
-    text-align: center;
-   
-   
-   
-}
-
-
-BUTTON{
-    background-color: rgb(0,0,0);
-    border-radius:5px;
-    height: 100%;
-    float: left;
-    
-    
-    
-}
-a{
-    text-decoration:none;
-    color: white
-} */
-/*--------------------------------------------------------*/
 
 
 
@@ -55,13 +28,14 @@ section{
 
 }
 .box{
-    width: 11%;
-    height: 103px;
+    width: 11% auto;
+    height: auto;
     background: skyblue;
     margin: 20px;
     box-sizing: border-box;
-    font-size: 50px;
+    font-size: 25px;
     display: inline-block   ;
+    box-shadow: 4px 4px 9px 4px;
     
 }
 

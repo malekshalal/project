@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="icon" href="../view/css/image/logo.png">
     <link rel="stylesheet" href="../view/css/login.css">
+    
     <title>تسجيل الدخول/Taqaddom Scales Co. Lts.</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
 ?>
 
 
-    <form class="loginform" action="../controller/check.php" method="post">
+    <form class="loginform" action="../controller/check.php" method="post" onsubmet()>
         <center><img src="../view/css/image/logo.png" alt=""></center>
         
         <h3 style="text-align: center;">تسجيل الدخول</h3>
