@@ -4,6 +4,8 @@ if (!isset($_SESSION['username'])){
     header("location:login.php");
     die();
   }
+
+  $id= $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="AR">
@@ -21,6 +23,16 @@ if (!isset($_SESSION['username'])){
     <?php
     include "./navadmin.php";
 
+
+     
+        
+        $conn=mysqli_connect("localhost","root","","app");
+       
+       
+        
+    
+   
+
     ?>
 
 
@@ -29,31 +41,32 @@ if (!isset($_SESSION['username'])){
        <div class="container">
             <div class="slide">
                 <ul>
+                    <?php
+                        $query1="SELECT * FROM category  ";
+                        $result1=mysqli_query($conn,$query1);
+                        
+
+                        if(mysqli_num_rows($result1)>0){
+                            while( $category=mysqli_fetch_assoc($result1)){
+                        
+                    ?>
                     <li>
-                        <a href="#">
-                            <span class="title">asdfgdhn</span>
+                        <a href="product.php?id=<?php echo $category['id'];?>">
+                            <span class="title"><?php echo $category['name'];?></span>
                         </a>
                     </li>
-                    <li><a href="#">
-                            cghm
-                        </a>
-                    </li>
-                    <li><a href="#">
-                            sdgbg
-                        </a>
-                    </li>
-                    <li><a href="#">
-                            adsgsb
-                        </a>
-                    </li>
-                    <li><a href="#">
-                            afbgf
-                        </a>
-                    </li>
-                    <li><a href="#">
-                           fdsbgf
-                        </a>
-                    </li>
+                    <hr>
+                    <?php
+                        }
+                    }else{
+                        echo '<script type="text/javascript">';
+                        echo 'window.alert("لا يوجد منتجات حاليا")';  
+                        echo '</script>';
+                    }
+                    ?>
+                        
+
+                   
                 </ul>
             </div>
             
@@ -63,21 +76,40 @@ if (!isset($_SESSION['username'])){
 
 
        <div class="container_BOX">
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4><a href="./product.php?id="></a></h4></div>
-        </div>
+           <?php
+                $query2="SELECT * FROM product WHERE id_cat = $id  ";
+                $result2=mysqli_query($conn,$query2);
+                
 
+                if(mysqli_num_rows($result2)>0){
+                    while( $product=mysqli_fetch_assoc($result2)){
+
+           ?>
+            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4> <?php echo $product['name'];?> </h4>
+
+                        
+                <img src="<?php echo $product['image'] ?>" alt="">
+
+                <div class="price">
+                    <h5 >price :<?php echo  $product['price']; ?></h5>
+                </div>
+                        
+            </div>
+            <?php
+                        }
+                    }else{?>
+                        <center><div class="box" style=" width:67%; "  ><h4 style ="color:red;font-size: 22px;">لايوجد منتجات متوفره حاليا </h4></div></center>
+                    <?php    
+                    }
+                    ?>
+            
+        </div>
+               
        
+
+    
+     
+    </div>
 
 
     </section>

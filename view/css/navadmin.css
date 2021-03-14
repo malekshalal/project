@@ -29,6 +29,7 @@ nav ul li{
     line-height: 80px;
     margin: 0px 5px;
     float: right;
+    height: 74px;
     
     
      
@@ -98,6 +99,7 @@ a.active,a:hover{
         margin: 50px 0;
         line-height: 30px;
         width: 100%;
+        
 
     }
 
