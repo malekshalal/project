@@ -125,6 +125,9 @@ section .container .slide ul li a{
     }
 }
 @media screen and (max-width:600px){
+    section{
+        height: 100%;
+    }
     .box{
         width: 90%;
 

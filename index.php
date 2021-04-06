@@ -1,4 +1,7 @@
 <?php
+ include "logs.php";
+ $log="the user entered ";
+ logger($log);
 
 ?>
 

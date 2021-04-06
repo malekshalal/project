@@ -22,7 +22,7 @@
             
             <li><a class="active" href="./admin.php">المنتجات</a></li>
             <li><a href="#">منتج مخصص</a></li>
-            <li><a href="#">اضافة مستخدم</a></li>
+            <li><a href="./adduser.php"> الموظفين</a></li>
             <li  ><a href="../logout.php">تسجيل الخروج</a></li>
             
             
