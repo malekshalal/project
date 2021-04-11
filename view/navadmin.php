@@ -21,26 +21,14 @@
         <label for="" class="logo"><img  alt=""   src="../view/css/image/logo.png" style="width: 77px;height: 83%; float: right;border:1px white solid ;border-radius: 8px;background: rgba(255,255,255,0.1);margin-top: 5px;margin-right:5px "></label>
         <ul id="nv">
             
-            <li class="li active"><a  href="./admin.php">المنتجات</a></li>
-            <li class="li"><a  href="custom.php">منتج مخصص</a></li>
-            <li class="li"><a  href="./users.php"> الموظفين</a></li>
-            <li class="li"><a  href="../logout.php">تسجيل الخروج</a></li>  
+            <li class="active" ><a   href="./admin.php">المنتجات</a></li>
+            <li ><a  href="custom.php">منتج مخصص</a></li>
+            <li ><a  href="./users.php"> الموظفين</a></li>
+            <li><a  href="../logout.php">تسجيل الخروج</a></li>  
         </ul>
       
        
     </nav>
-<!-- 
-    <script>
-// Add active class to the current button (highlight it)
-var header = document.getElementById("nv");
-var lis = header.getElementsByClassName("li");
-for (var i = 0; i < lis.length; i++) {
-  lis[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
-  });
-}
-</script> -->
+
 </body>
 </html>

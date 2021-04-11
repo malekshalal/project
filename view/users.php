@@ -1,13 +1,16 @@
 <?php
 
-    session_start();
+
+
+session_start();
     if (!isset($_SESSION['username'])){
         header("location:login.php");
         die();
     }
     include "../host/connection.php";
     $time=time();
-    $result=mysqli_query($con,"SELECT * FROM USERS");
+    $result=mysqli_query($con,"SELECT * FROM users");
+    
     
 ?>
 <!DOCTYPE html>
@@ -39,29 +42,52 @@
             <thead>
                <tr>
                   <th width="5%">#</th>
-                  <th width="80%">Name</th>
-                  <th width="15%">Status</th>
+                  <th width="55%">اسم المستخدم</th>
+                  
+                  <th width="15%">قسم</th>
+                  <th width="20%">الحالة</th>
+                 
+                  <th width="5%"><i class="fas fa-user-minus"></i></th>
                </tr>
+               
             </thead>
             <tbody id="user_grid">
 			   <?php 
+               
 			   $i=1;
 			   while($row=mysqli_fetch_assoc($result)){
 			   $status='Offline';
 			   $class="btn-danger";
+               $type='';
+               if($row['typeuser']=="M"){
+                    $type= " التصنيع";
+                }elseif($row['typeuser']=="R"){
+                    $type= " المخزن";
+                }
+                else{
+                    $type="مدير";
+                }
 			   if($row['last_login']>$time){
 					$status='Online';
 					$class="btn-success";
+                   
+		            
 			   }
 			   ?>	
                <tr>
                   <th scope="row"><?php echo $i?></th>
                   <td><?php echo $row['username']?></td>
+                  <td><?php echo $type?></td>
                   <td><button type="button" class="btn <?php echo $class?>"><?php echo $status?></button></td>
-               </tr>
+                  <td><a href="../controller/deletuser.php?id=<?php echo $row['id']  ?>"><i class="fas fa-user-minus"></i></a></td>
+             </tr>
 			   <?php 
 			   $i++;
 			   } ?>
+
+
+
+               
             </tbody>
          </table>
       </div>
