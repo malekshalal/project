@@ -1,11 +1,12 @@
 <?php
-include "../host/connection.php";
-include "../controller/generatepass.php";
 $username = $_POST['name'];
-$password=generatepassword();
-$email=$_POST['name']."@gmail.com";
+$password=$_POST['pass'];
+$email=$_POST['email'];
 $phone=$_POST['phone'] ;
-$type=$_POST['type'];
+$type="C";
+
+include "../host/connection.php";
+
 
 if(isset($_POST['reg'])){
 
@@ -14,7 +15,7 @@ if(isset($_POST['reg'])){
     
     if (mysqli_num_rows($result)>0){
 
-        header("Location:../view/adduser.php?Erorr=2");
+        header("Location:../view/Registration.php?Erorr=2");
         
 
     }else{
@@ -26,7 +27,7 @@ if(isset($_POST['reg'])){
       
 
 
-        header("Location:../view/print.php?username=$username&&password=$password");
+        header("Location:../view/login.php");
     }
 
 }

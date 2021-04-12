@@ -112,9 +112,7 @@ button{
 button:hover{
     background-color: #5390f5;
 }
-/* .div ,.name,.input,.option :hover{
-    display: none;
-} */
+
 
 
 @media screen and (max-width: 999px ){

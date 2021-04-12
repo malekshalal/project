@@ -22,7 +22,7 @@
         <ul id="nv">
             
             <li class="active" ><a   href="./admin.php">المنتجات</a></li>
-            <li ><a  href="custom.php">منتج مخصص</a></li>
+            <li ><a  href="Requests.php">الطلبات</a></li>
             <li ><a  href="./users.php"> الموظفين</a></li>
             <li><a  href="../logout.php">تسجيل الخروج</a></li>  
         </ul>
