@@ -19,11 +19,26 @@ $p5=0;
 $p6=0;
 $p7=0;
 $p8=0;
+$id_product='';
+$lingth='';
+$color='';
+$l1=0;
+$l2=0;
+$l3=0;
+$l4=0;
+$l5=0;
+$l6=0;
+$l7=0;
+$l8=0;
 
  if(isset($_POST['submit'])){
    $id=$_POST['width'];
 
  }
+ if(isset($_POST['submit'])){
+	$color=$_POST['color'];
+ 
+  }
  
 
  $query="SELECT * FROM price WHERE id =$id";
@@ -39,26 +54,47 @@ $p8=0;
 		$p6=$pr['p6'];
 		$p7=$pr['p7'];
 		$p8=$pr['p8'];
+		$id_product=$pr['id_product'];
 		
 	 } 
 
-	 echo $w;
+	
 
  
 
 
 
 $targetLength = -1;
-$prices = array($w => array( $p1,$p2 , $p3, $p4, $p5, $p6, $p7, $p8));
+
+$query="SELECT * FROM length WHERE 	id_product =$id_product";
+ $result=mysqli_query($con,$query);
+	 if(mysqli_num_rows($result)>0){ 
+		$len=mysqli_fetch_array($result);
+		
+		$l1=$len['l1'];
+		$l2=$len['l2'];
+		$l3=$len['l3'];
+		$l4=$len['l4'];
+		$l5=$len['l5'];
+		$l6=$len['l6'];
+		$l7=$len['l7'];
+		$l8=$len['l8'];
+		
+		
+	 } 
+
+$prices = array($w => array( $l1,$l2 , $l3, $l4, $l5, $l6, $l7, $l8));
 $width = $w;
+$lingth='';
 $cntRows = 1;
 
 
 if (isset($_POST['submit'])) {
 	if ($_POST['length'] >= 1 && $_POST['length'] <= 10000 + 5) {
 
-		echo $_POST['length'];
+		$lingth=$_POST['length'];
 		$targetLength = $_POST['length'];
+
 		$targets = array();
 
 		require_once('../model/target.php');
@@ -112,16 +148,43 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calculator</title>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../view/css/image/logo.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../view/css/costom.css">
+   
+	<title>منتج مخصص</title>
 </head>
 <body>
 	
 	
 	<?php
 
+	include "../view/navclint.php";
 
-
-
+	
+		/* echo '<div class="lingth"'; */
+			echo'<table ">';
+				echo'<tr>';
+					
+					
+					
+				
+					echo'<td><h6 class="color" style=" background-color:'.$color.'">اللون</h6></td>';
+					
+					echo'<td> <h4 class="contint">'.$lingth.' cm</h4></td>';
+					echo'<td><h3 class="title">:الطول المدخل</h3></td>';
+					echo'<td><h4 class="contint">'.$w.'cm</h4></td>';
+					echo'<td><h3 class="title">:العرض المختار</h3></td>';
+				
+				echo'</tr>';
+			
+			echo'</table><br><hr>';
+				
+		/* echo '</div>'; */
 
 		if ($targetLength > 0) {
 			$i = $targetLength;
@@ -135,6 +198,8 @@ if (isset($_POST['submit'])) {
 			}
 
 			if ($i == 0) {
+
+				
 				echo "<br><strong>الطول الكلي: 0<br>";
 				echo "عدد المواد: 0</strong><br><br>";
 			}
@@ -164,16 +229,7 @@ if (isset($_POST['submit'])) {
 					$first = true;
 					foreach ($element as $value) {
 						
-						if (!$first) {
-
-
-							
-
-                              
-
-							echo ", ";
-							
-						} 
+						 
 
 						$strPrice .= $prices[$width][ array_search($value, $lengths)]; 
  						$sum += $prices[$width][ array_search($value, $lengths)];
@@ -194,7 +250,7 @@ if (isset($_POST['submit'])) {
 						}elseif($value==50){
 							$c8+=1;
 						}
-						echo $value;
+						
 						
 						
 						$first = false;
@@ -249,7 +305,7 @@ if (isset($_POST['submit'])) {
 					echo "price =". $strPrice . "<br><br>";
 
 
-					echo"<button>print</button>";
+					echo"<center><button>طلب</button></center>";
 
 					echo"<br><br>";
 				}

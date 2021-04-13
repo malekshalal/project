@@ -34,7 +34,7 @@
 
 
 
-            <h3 > اختر عرض المنتج</h3>
+            <h3 >منتج مخصص</h3>
 
             <select name="width" id="" class="option" required>
             <option value="" selected="selected" disabled="disabled" >اختر عرض المنتج</option>
@@ -69,9 +69,11 @@
             </select><br>
             <br>
             
-            <h3>:ادخل الطول </h3>
+            <h3>:  ادخل الطول بوحدة سم</h3>
             
-             <input type="number" id="length" name="length" min="1" max="10000" value="<?php if ($targetLength > 0) echo $targetLength; ?>">	
+             <input type="number" id="length" name="length" min="1" required max="10000" value="<?php if ($targetLength > 0) echo $targetLength; ?> ">	
+             <h3>:ادخل اللون </h3>
+             <input class="color" type="color"  name="color" value="#0000">
 
              <center><button name="submit" class=" center "> التالي</button></center>
         </div>

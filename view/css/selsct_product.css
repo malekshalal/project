@@ -8,7 +8,7 @@
  }
  
  .select{
-   margin-top: 6%;
+   margin-top: 2%;
    border: 1px solid #000;
    margin-right: 6%;
    margin-left: 6%;
@@ -44,10 +44,7 @@
 .option{
     position: relative;
     width: 60%;
-    margin-top: 5%;
-    
-    
-    top: 17px;
+    margin-top: 2%;
     margin-left: 19%;
     line-height: 40px;
     margin-right:19% ;
@@ -62,11 +59,23 @@
 #length{
     position: relative;
     margin-left: 19%;
-    top: 17px;
+    
     margin-right:19% ;
     line-height: 40px;
     width: 60%;
     border-radius: 6px;
     padding: 0 22px;
     font-size: 16px;
+}
+
+.color{
+    position: relative;
+    margin-left: 35%;
+    margin-right: 35%;
+    line-height: 40px;
+    width: 30%;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+
 }
