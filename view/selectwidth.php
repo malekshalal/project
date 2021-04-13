@@ -34,7 +34,7 @@
 
 
 
-            <h3 for="product"> اختر عرض المنتج</h3>
+            <h3 > اختر عرض المنتج</h3>
 
             <select name="width" id="" class="option" required>
             <option value="" selected="selected" disabled="disabled" >اختر عرض المنتج</option>
@@ -66,7 +66,13 @@
         }
          ?>
             
-            </select>        
+            </select><br>
+            <br>
+            
+            <h3>:ادخل الطول </h3>
+            
+             <input type="number" id="length" name="length" min="1" max="10000" value="<?php if ($targetLength > 0) echo $targetLength; ?>">	
+
              <center><button name="submit" class=" center "> التالي</button></center>
         </div>
 

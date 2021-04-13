@@ -1,3 +1,7 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+*{
+    font-family: 'Amiri';
+}
 .right{
     float: right;
     margin-right: 40px;

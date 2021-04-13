@@ -4,25 +4,18 @@ section{
     background-size: cover;
     height: calc(100.8vh - 80px);
 }
-
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 *{
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    font-family: 'Amiri';
 
 }
 
-body{
-    font-family: monospace;
-   
-    
-    
-    
-   
 
-}
 
 section .container{
     position: relative;

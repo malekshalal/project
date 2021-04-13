@@ -1,15 +1,15 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 *{
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    font-family: 'Amiri';
 
 }
 
-body{
-    font-family: monospace;
-}
+
 nav{
     background-color:rgb(63, 128, 212);
     height: 74px;

@@ -1,3 +1,7 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+*{
+  font-family: 'Amiri';
+}
 .header{
 
  background-color:rgb(63, 128, 212);

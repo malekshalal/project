@@ -42,7 +42,7 @@ if (!isset($_SESSION['username'])){
             
             
             <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" >
-            <h4><a href="./product.php?id=<?php echo $category['id'];?>"><?php echo $category['name'];?></a></h4></div>
+            <h4><a href="./productc.php?id=<?php echo $category['id'];?>"><?php echo $category['name'];?></a></h4></div>
             
         <?php
         }

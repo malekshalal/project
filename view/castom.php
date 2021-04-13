@@ -24,7 +24,7 @@ $p8=0;
    $id=$_POST['width'];
 
  }
- echo $id;
+ 
 
  $query="SELECT * FROM price WHERE id =$id";
  $result=mysqli_query($con,$query);
@@ -42,7 +42,7 @@ $p8=0;
 		
 	 } 
 
-	
+	 echo $w;
 
  
 
@@ -52,18 +52,13 @@ $targetLength = -1;
 $prices = array($w => array( $p1,$p2 , $p3, $p4, $p5, $p6, $p7, $p8));
 $width = $w;
 $cntRows = 1;
-/* 
-if (isset($_GET['width'])) {
-	$width = $_GET['width'];
-} */
 
-// if (isset($_GET['row'])) {
-// 	$cntRows = $_GET['row'];
-// }
 
-if (isset($_GET['length'])) {
-	if ($_GET['length'] >= 1 && $_GET['length'] <= 10000 + 5) {
-		$targetLength = $_GET['length'];
+if (isset($_POST['submit'])) {
+	if ($_POST['length'] >= 1 && $_POST['length'] <= 10000 + 5) {
+
+		echo $_POST['length'];
+		$targetLength = $_POST['length'];
 		$targets = array();
 
 		require_once('../model/target.php');
@@ -120,15 +115,14 @@ if (isset($_GET['length'])) {
 	<title>Calculator</title>
 </head>
 <body>
-	<form method="GET" action="?">
-		
-
-		Length: <input type="number" id="length" name="length" min="1" max="10000" value="<?php if ($targetLength > 0) echo $targetLength; ?>">	
-		<!-- Number of Rows: <input type="number" name="row" min="1" value="<?php echo $cntRows; ?>">
-		<input type="submit" value="Calculate"> -->
-	</form>
+	
 	
 	<?php
+
+
+
+
+
 		if ($targetLength > 0) {
 			$i = $targetLength;
 

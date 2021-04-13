@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+*{
+    font-family: 'Amiri';
+}
+
+
 body{
     margin: 0;
 }

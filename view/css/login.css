@@ -1,4 +1,8 @@
-* {box-sizing: border-box;}
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+* {
+  box-sizing: border-box;
+  font-family: 'Amiri';
+}
 body{
     margin: 0;
 }
