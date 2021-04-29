@@ -5,6 +5,7 @@
 }
 body{
     margin: 0;
+    overflow: hidden;
 }
 
 .header{
@@ -39,8 +40,8 @@ body{
   min-width: 50px;
   text-align: center;
   
-  border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
 }
 
 /* Style the input fields */
@@ -84,7 +85,7 @@ border-bottom-right-radius: 5px;
    width: 35%;
    height:100%;
    margin-left: 30%;
-   margin-top:7%;
+   margin-top:1%;
    border-radius: 9px;
    
    margin-bottom: 300px;
@@ -110,7 +111,7 @@ border-bottom-right-radius: 5px;
    width: 60%;
    height:100%;
    margin-left: 20%;
-   margin-top:7%;
+   margin-top:1%;
    border-radius: 9px;
    
    margin-bottom: 300px;

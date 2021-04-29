@@ -26,7 +26,7 @@
 
 
     ?>
-    <div class="regform"><h1>انشاء حساب مستخدم جديد</h1></div>
+    <div class="regform"><h1>انشاء حساب موظف جديد</h1></div>
     <div class="body">
         <form action="../controller/createuser.php" method="post" >
             

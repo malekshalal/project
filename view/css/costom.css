@@ -4,7 +4,9 @@
     font-family: 'Amiri';
 
 }
-
+body{
+    margin-left: 50px;
+}
 button{
  
     position: relative;

@@ -83,7 +83,7 @@ $query="SELECT * FROM length WHERE 	id_product =$id_product";
 		
 	 } 
 
-$prices = array($w => array( $l1,$l2 , $l3, $l4, $l5, $l6, $l7, $l8));
+$prices = array($w => array( $p1,$p2 , $p3, $p4, $p5, $p6, $p7, $p8));
 $width = $w;
 $lingth='';
 $cntRows = 1;
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
 
 		require_once('../model/target.php');
 
-		$lengths = array(50, 60, 70, 80, 90, 100, 110, 117);
+		$lengths = array($l1, $l2, $l3, $l4, $l5, $l6, $l7, $l8);
 
 		for ($i = 0; $i <= $targetLength + 5; $i ++) {
 			$target = new Target();
@@ -199,9 +199,12 @@ if (isset($_POST['submit'])) {
 
 			if ($i == 0) {
 
-				
-				echo "<br><strong>الطول الكلي: 0<br>";
-				echo "عدد المواد: 0</strong><br><br>";
+				echo'<table ">';
+					echo'<tr>';
+						echo "<br><strong>الطول الكلي: 0<br>";
+						echo "عدد المواد: 0</strong><br><br>";
+					echo'</tr>';
+				echo'</table>';
 			}
 
 			for ($j = $i - 5; $j <= $i + 5; $j ++) {
@@ -303,6 +306,7 @@ if (isset($_POST['submit'])) {
 					$strPrice =  $sum ;
 					echo "<br>";
 					echo "price =". $strPrice . "<br><br>";
+					
 
 
 					echo"<center><button>طلب</button></center>";

@@ -41,6 +41,7 @@ body{
     padding: 0;
    
     height: 100vh;
+    background: skyblue;
 }
 .container  {
      width: 100%;

@@ -1,5 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Ar">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,13 +34,15 @@
         <h3 style="text-align: center;">تسجيل الدخول</h3>
 
         <div class="input-container">
-            <i class="fas fa-user icon"></i>
             <input class="input-field" type="text" name="username" id="" placholder="اسم المستخدم" required>
+
+            <i class="fas fa-user icon"></i>
         </div>
 
         <div class="input-container">
-            <i class="fas fa-key icon"></i>
             <input  class="input-field" type="password" name="password" id="myInput" placeholde="كلمة المرور" required>
+            <i class="fas fa-key icon"></i>
+
             <script>
                 function myFunction() {
                     var x = document.getElementById("myInput");
@@ -51,7 +55,7 @@
             </script>
         </div>
         <div style="font-size: 5px;margin-top: 0px;color: white"> 
-            <input type="checkbox" onclick="myFunction()">Show
+        <center><input type="checkbox" onclick="myFunction()"> اظهر كلمة المرور</center>
         </div>
 
 
@@ -64,7 +68,11 @@
 
         <p class="error" style="color:red;text-align:center;"><?php echo $error;?></p>
         
+        <center><a href="../view/Registration.php">انشاء حساب</a></center>    
+        
     </form>
+
+   
     
 </body>
 </html>
