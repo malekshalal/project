@@ -155,36 +155,55 @@ if (isset($_POST['submit'])) {
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="../view/css/costom.css">
-   
+	
 	<title>منتج مخصص</title>
 </head>
 <body>
-	
-	
-	<?php
+<input type="checkbox" id="check">
+    <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>
+            <?php
 
-	include "../view/navclint.php";
+           
+                echo '<i class="fas fa-user"></i>';  
+               echo "        مرحبا" ;
+               echo $_SESSION['username']."  " ;
+            ?>
+        </header>
 
-	
-		/* echo '<div class="lingth"'; */
+
+
+        <ul>
+            <li> <a href="../view/client.php"> المنتجات</a></li>
+            <li> <a href="../view/selectproduct.php">منتج مخصص</a></li>
+            <li> <a href="../logout.php"> تسجيل الخروج</a></li>
+        </ul>
+
+
+    </div>
+
+
+	<section>
+			<?php
+
+			
+
+			
+		echo '<div class="lingth">';
 			echo'<table ">';
 				echo'<tr>';
-					
-					
-					
-				
 					echo'<td><h6 class="color" style=" background-color:'.$color.'">اللون</h6></td>';
-					
 					echo'<td> <h4 class="contint">'.$lingth.' cm</h4></td>';
 					echo'<td><h3 class="title">:الطول المدخل</h3></td>';
 					echo'<td><h4 class="contint">'.$w.'cm</h4></td>';
 					echo'<td><h3 class="title">:العرض المختار</h3></td>';
-				
 				echo'</tr>';
-			
 			echo'</table><br><hr>';
-				
-		/* echo '</div>'; */
+		echo '</div>';
 
 		if ($targetLength > 0) {
 			$i = $targetLength;
@@ -199,20 +218,36 @@ if (isset($_POST['submit'])) {
 
 			if ($i == 0) {
 
-				echo'<table ">';
-					echo'<tr>';
-						echo "<br><strong>الطول الكلي: 0<br>";
-						echo "عدد المواد: 0</strong><br><br>";
-					echo'</tr>';
-				echo'</table>';
+				echo "<div class ='info'>";
+					echo'<table ">';
+						echo'<tr>';
+							echo'<td> <h4 class="contint"> 0 </h4></tdh>';
+							echo'<td><h3 class="title">:عدد المواد 	</h3></td>';
+							echo'<td> <h4 class="contint"> 0 cm</h4></tdh>';
+							echo'<td><h3 class="title">:الطول الكلي 	</h3></td>';
+						echo'</tr>';
+					echo'</table><br>';
+				echo "</div>"; 	
 			}
 
 			for ($j = $i - 5; $j <= $i + 5; $j ++) {
 				if ($j <= 0 || $targets[$j]->length == 0) continue;
-
-				echo "<br><strong>الطول الكلي : " . $j . "<br>";
-				echo "عدد المواد: " . $targets[$j]->length . "</strong><br><br>";
 				
+				echo'<table class="info ">';
+					echo'<tr>';
+						echo'<td> <h4 class="contint">' . $targets[$j]->length .' </h4></tdh>';
+						echo'<td><h3 class="title">:عدد المواد 	</h3></td>';
+						echo'<td> <h4 class="contint"> ' . $j.' cm</h4></tdh>';
+						echo'<td><h3 class="title">:الطول الكلي 	</h3></td>';
+					echo'</tr>';
+				echo'</table><br>';
+			
+			echo'<hr>';
+
+				/* echo "<div class ='info'>";
+					echo "<strong>الطول الكلي : " . $j ;
+					echo "عدد المواد: " . $targets[$j]->length . "</strong><br><br>";
+				echo "</div>";  */
 				
 
 				foreach ($targets[$j]->elements as $element) {
@@ -232,25 +267,25 @@ if (isset($_POST['submit'])) {
 					$first = true;
 					foreach ($element as $value) {
 						
-						 
+						
 
 						$strPrice .= $prices[$width][ array_search($value, $lengths)]; 
- 						$sum += $prices[$width][ array_search($value, $lengths)];
-						 if($value==110){
+						$sum += $prices[$width][ array_search($value, $lengths)];
+						if($value==$l1){
 							$c1+=1;
-						}elseif($value==117){
+						}elseif($value==$l2){
 							$c2+=1;
-						}elseif($value==100){
+						}elseif($value==$l3){
 							$c3+=1;
-						}elseif($value==90){
+						}elseif($value==$l4){
 							$c4+=1;
-						}elseif($value==80){
+						}elseif($value==$l5){
 							$c5+=1;
-						}elseif($value==70){
+						}elseif($value==$l6){
 							$c6+=1;
-						}elseif($value==60){
+						}elseif($value==$l7){
 							$c7+=1;
-						}elseif($value==50){
+						}elseif($value==$l8){
 							$c8+=1;
 						}
 						
@@ -258,64 +293,102 @@ if (isset($_POST['submit'])) {
 						
 						$first = false;
 					}
-					echo "<br>";
+
+					
+
+					$strPrice =  $sum ;
+					
+					
+						echo '<form action="../controller/createuser.php" method="post" >';
+
+						
+							echo "<h3 style='margin-right: 10px;'>السعر :$strPrice</h3>";
+
+							echo '<div>';
+								echo '<input class="input" type="text" name="name" placeholder="ادخل اسم المستخدم" required> ';
+							echo '<label for="">اسم المستخدم</label>';
+						echo '</div>';
+
+						echo '<div>';
+							echo'<input class="input" type="text" name="name" placeholder="ادخل اسم المستخدم" required> ';
+							echo' <label for="">اسم المستخدم</label>';
+						echo'</div>';
+
+						echo'<div>';
+							echo'<input class="input" type="text" name="name" placeholder="ادخل اسم المستخدم" required> ';
+							echo'<label for="">اسم المستخدم</label>';
+						echo'</div>';
+							echo'<center><button type="submit"  name="reg">انشاء</button></center>';
+				
+						echo'</form>';
+
+             
+            
+    
+            
+					
+       				
+					   
+					/* echo "<br>";
 					if ( $c1>0 ) {
 						echo"<br>";
-						echo "عدد المواد المطلوبة من قياس 110:<lable>$c1</lable>"."<br>";
+						echo "عدد المواد المطلوبة من قياس $l1:<lable>$c1</lable>"."<br>";
 					}
 					if ( $c2>0 ){
-						echo "عدد المواد المطلوبة من قياس 117:<lable>$c2</lable>"."<br>";
+						echo "عدد المواد المطلوبة من قياس $l2:<lable>$c2</lable>"."<br>";
 
 
 					} 
 					if ( $c3>0 ){
-						echo "عدد المواد المطلوبة من قياس 100:<lable>$c3</lable>"."<br>";
+						echo "عدد المواد المطلوبة من قياس $l3:<lable>$c3</lable>"."<br>";
 
 
 					} 
-					 if ( $c4>0 ){
-						echo "عدد المواد المطلوبة من قياس 90:<lable>$c4</lable>"."<br>";
+					if ( $c4>0 ){
+						echo "عدد المواد المطلوبة من قياس $l4:<lable>$c4</lable>"."<br>";
 
 
 					} 
 					if ( $c5>0 ){
-						echo "عدد المواد المطلوبة من قياس 80:<lable>$c5</lable>"."<br>";
+						echo "عدد المواد المطلوبة من قياس $l5:<lable>$c5</lable>"."<br>";
 
 
 					} 
 					if ( $c6>0 ){
-						echo "عدد المواد المطلوبة من قياس 70:<lable>$c6</lable>"."<br>";
+						echo "عدد المواد المطلوبة من قياس $l6:<lable>$c6</lable>"."<br>";
 
 
 					} 
 					if ( $c7>0 ){
-						echo "عدد المواد المطلوبة من قياس 60:<lable>$c7</lable>"."<br>";
+						echo "عدد المواد المطلوبة من قياس $l7:<lable>$c7</lable>"."<br>";
 
 
 					} 
 					if ( $c8>0 ){
-						echo "عدد المواد المطلوبة من قياس 50:<lable>$c8</lable>"."<br>";
+						echo "عدد المواد المطلوبة من قياس $l8:<lable>$c8</lable>"."<br>";
 
 
-					}
+					} */
 
-					  
+					
 					
 					echo "<br>";
 					
-					$strPrice =  $sum ;
-					echo "<br>";
-					echo "price =". $strPrice . "<br><br>";
+					
 					
 
 
-					echo"<center><button>طلب</button></center>";
 
-					echo"<br><br>";
+					
+					
 				}
 				
+				
 			}
+			
 		}
-	?>
+		?>
+	</section>
+	
 </body>
 </html>

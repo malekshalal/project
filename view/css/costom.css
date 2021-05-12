@@ -2,11 +2,17 @@
 
 *{
     font-family: 'Amiri';
-
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+     color: white;
 }
-body{
-    margin-left: 50px;
-}
+ section{
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+} 
 button{
  
     position: relative;
@@ -32,33 +38,264 @@ button{
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: white;
+    
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
-table{
-    margin-top: 1%;
-    text-align: center;
-    width: 90%;
+  .lingth{
+    margin-left: 70px;
+   
+}
+ table{
+     
+    text-align: right;
+     width: 90%; 
+   
     margin-left: 5%;
     margin-right: 5%;
     
+    
 }
-.contint{
+  .contint{
     width: 5%;
     text-align: right;
-    margin-left: 70%;
-}
-td{
-    text-align: left;
+    display: inline-block;
+    /* margin-left: 70%; */
+    color: white;
+} 
+ td{
+    text-align: center;
 }
 
-.title{
+ .title{
+    display: inline-block;
     width:35%;
-    text-align: left;
-}
+    text-align: right;
+    color: white;
+} 
 hr{
     margin-right: 2%;
     margin-left: 2%;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+
+
+  
+   html { 
+     background: url(../css/image/1567674.jpg) no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   }
+   
+   
+   
+   
+   
+   
+   
+ 
+   @media screen and (max-width: 999px )  {
+   
+   
+    /* to perfect image in all screen size  */
+   html { 
+     background: url(../css/image/1567674.jpg) no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   
+   }
+
+
+/****************************************************************************************/
+.sidebar{
+    position: fixed;
+    left:-250px;
+    width: 250px;
+    height: 100%;
+    background:rgba(128, 0, 0, 0.77);
+    transition: all .5s ease;
+}
+.sidebar header{
+    font-size: 25px;
+    color: wheat;
+    text-align:center ;
+    line-height: center;
+    background:rgba(131, 9, 9, 1) ;
+    user-select: none;
+}
+.sidebar ul a{
+    
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid black;
+
+}
+
+ul li:hover a{
+padding-left:50px ;
+}
+
+#check{
+    display: none;
+}
+label #btn,label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #3716bb;
+    border-radius: 5px;
+}
+label #btn{
+    left: 0;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top:3px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left:210px;
+    
+
+}
+
+#check:checked ~ section{
+    margin-left: 250px;
+    height: 100vh;
+    transition: all .5s;
+}
+
+
+/* ************************************** */
+
+.info{
+    margin-top: 40px;
+    
+    text-align: center;
+    width: 100%;
+    
+    
+}
+
+
+
+
+
+
+form {
+    background: rgba(65, 165, 244, 0.6);
+   float: right; 
+   text-align: right;
+    display:list-item     ;
+
+    width: 25%;
+    
+    margin-right: 100px;
+    margin-top: 20px;
+    box-sizing: content-box;
+    
+}
+
+
+@media screen and (max-width:600px){
+    form{
+     width: 90%;
+        float: none;
+        margin-left:5%;
+        margin-right: 5%;
+       
+    }
+    
+    
+
+    
+}
+
+
+
+
+label{
+    margin-right: 10px;
+    text-align: center;
+    top: 17px;
+    position: relative;
+    font-size: 22px;
+    font-family: "Amiri";
+
+}
+
+.input{
+    
+    position: relative;
+    
+    top: 17px;
+    margin-right: 15px;
+    line-height: 40px;
+    width: 100px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+}
+input[disabled], input[disabled]:hover {
+    background-color:white;
+ }
+ button{
+ 
+    position: relative;
+    background-color: #3baf9f;
+    display: block;
+    margin: 20px 5px 5px 20px;
+    text-align:center ;
+    border-radius: 12px;
+    border: 2px solid #366a73;
+    padding: 14px 80px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25px; 
+}
+button:hover{
+    background-color: #5390f5;
 }
