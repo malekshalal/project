@@ -9,6 +9,7 @@ if (!isset($_SESSION['username'])){
 
 
 include "../host/connection.php";
+$_SESSION['width']=0;
 $id=0;
 $w="";
 $p1=0;
@@ -21,7 +22,7 @@ $p7=0;
 $p8=0;
 $id_product='';
 $lingth='';
-$color='';
+$_SESSION['color']='';
 $l1=0;
 $l2=0;
 $l3=0;
@@ -33,10 +34,11 @@ $l8=0;
 
  if(isset($_POST['submit'])){
    $id=$_POST['width'];
+   $_SESSION['width']=$_POST['width'];
 
  }
  if(isset($_POST['submit'])){
-	$color=$_POST['color'];
+	$_SESSION['color']=$_POST['color'];
  
   }
  
@@ -99,7 +101,7 @@ if (isset($_POST['submit'])) {
 
 		require_once('../model/target.php');
 
-		$lengths = array($l1, $l2, $l3, $l4, $l5, $l6, $l7, $l8);
+		$lengths = array($l1, $l2, $l3,$l4, $l5, $l6, $l7, $l8);
 
 		for ($i = 0; $i <= $targetLength + 5; $i ++) {
 			$target = new Target();
@@ -196,7 +198,7 @@ if (isset($_POST['submit'])) {
 		echo '<div class="lingth">';
 			echo'<table ">';
 				echo'<tr>';
-					echo'<td><h6 class="color" style=" background-color:'.$color.'">اللون</h6></td>';
+					echo'<td><h6 class="color" style=" background-color:'.$_SESSION['color'].'">اللون</h6></td>';
 					echo'<td> <h4 class="contint">'.$lingth.' cm</h4></td>';
 					echo'<td><h3 class="title">:الطول المدخل</h3></td>';
 					echo'<td><h4 class="contint">'.$w.'cm</h4></td>';
@@ -229,7 +231,7 @@ if (isset($_POST['submit'])) {
 					echo'</table><br>';
 				echo "</div>"; 	
 			}
-
+			$cun=1;
 			for ($j = $i - 5; $j <= $i + 5; $j ++) {
 				if ($j <= 0 || $targets[$j]->length == 0) continue;
 				
@@ -242,14 +244,14 @@ if (isset($_POST['submit'])) {
 					echo'</tr>';
 				echo'</table><br>';
 			
-			echo'<hr>';
+				echo'<hr>';
 
 				/* echo "<div class ='info'>";
 					echo "<strong>الطول الكلي : " . $j ;
 					echo "عدد المواد: " . $targets[$j]->length . "</strong><br><br>";
 				echo "</div>";  */
 				
-
+				$cunt=1;
 				foreach ($targets[$j]->elements as $element) {
 					
 					$strPrice = ' ';
@@ -262,9 +264,13 @@ if (isset($_POST['submit'])) {
 					$c6=0;
 					$c7=0;
 					$c8=0;
+
+
+					
 					
 
 					$first = true;
+					
 					foreach ($element as $value) {
 						
 						
@@ -296,31 +302,151 @@ if (isset($_POST['submit'])) {
 
 					
 
-					$strPrice =  $sum ;
+					$_SESSION['strPrice'] =  $sum ;
+					$strPrice= $sum ;
 					
-					
-						echo '<form action="../controller/createuser.php" method="post" >';
+						echo '<form action="../controller/requests.php" method="post" >';
 
 						
 							echo "<h3 style='margin-right: 10px;'>السعر :$strPrice</h3>";
+							if ( $c1>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='ci".$cunt . $cun."'  value='$c1' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l1.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
 
-							echo '<div>';
-								echo '<input class="input" type="text" name="name" placeholder="ادخل اسم المستخدم" required> ';
-							echo '<label for="">اسم المستخدم</label>';
-						echo '</div>';
 
-						echo '<div>';
-							echo'<input class="input" type="text" name="name" placeholder="ادخل اسم المستخدم" required> ';
-							echo' <label for="">اسم المستخدم</label>';
-						echo'</div>';
+							if ( $c2>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='cii".$cunt.$cun."'  value='$c2' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l2.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
 
-						echo'<div>';
-							echo'<input class="input" type="text" name="name" placeholder="ادخل اسم المستخدم" required> ';
-							echo'<label for="">اسم المستخدم</label>';
-						echo'</div>';
-							echo'<center><button type="submit"  name="reg">انشاء</button></center>';
+							if ( $c3>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='ciii".$cunt.$cun."'  value='$c3' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l3.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
+						
+							if ( $c4>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='civ".$cunt.$cun."'  value='$c4' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l4.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
+							if ( $c5>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='cv".$cunt.$cun."'  value='$c5' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l5.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
+						
+							if ( $c6>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='cvi".$cunt.$cun."'  value='$c6' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l6.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
+							if ( $c7>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='cvii".$cunt.$cun."'  value='$c7' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l7.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
+						
+							if ( $c8>0 ) {
+								echo '<div>';
+								
+									echo "<input class='input' type='text' name='cviii".$cunt.$cun."'  value='$c8' readonly> ";
+								
+									echo '<label for="myinput">
+									
+									
+									:عدد المواد المطلوبة من قياس '.$l8.'
+										
+										
+										
+										
+										</label>';
+								echo '</div>';
+							}
+							echo'<center><button type="submit"  name="sub'.$cunt.$cun.'">طلب</button></center>';
 				
 						echo'</form>';
+						$cunt+=1;
 
              
             
@@ -378,17 +504,23 @@ if (isset($_POST['submit'])) {
 					
 
 
-
+					$_SESSION['u']=$cunt;
 					
 					
 				}
-				
-				
+				$cun+=1;	
 			}
 			
+
+				$_SESSION['u2']=$cun;
+			
 		}
+		echo $_SESSION['u'];
+		echo "<br>";
+		echo $_SESSION['u2'];
 		?>
 	</section>
+	
 	
 </body>
 </html>

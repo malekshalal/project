@@ -44,6 +44,7 @@
             <?php
              if(!isset($_POST['selectwidth'])){
                 $id_product=$_POST['product'];
+                $_SESSION['id_prod']=$id_product;
                 
                 $query="SELECT * FROM price WHERE id_product =$id_product";
                 $result=mysqli_query($con,$query);
