@@ -324,6 +324,9 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='ci".$cunt . $cun."'  value='$c1' readonly> ";
+
 							}
 
 
@@ -342,6 +345,9 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='cii".$cunt.$cun."'  value='$c2' readonly> ";
+
 							}
 
 							if ( $c3>0 ) {
@@ -359,6 +365,9 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='ciii".$cunt.$cun."'  value='$c3' readonly> ";
+
 							}
 						
 							if ( $c4>0 ) {
@@ -376,6 +385,9 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='civ".$cunt.$cun."'  value='$c4' readonly> ";
+
 							}
 							if ( $c5>0 ) {
 								echo '<div>';
@@ -392,6 +404,9 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='cv".$cunt.$cun."'  value='$c5' readonly> ";
+
 							}
 						
 							if ( $c6>0 ) {
@@ -409,6 +424,9 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='cvi".$cunt.$cun."'  value='$c6' readonly> ";
+
 							}
 							if ( $c7>0 ) {
 								echo '<div>';
@@ -425,6 +443,9 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='cvii".$cunt.$cun."'  value='$c7' readonly> ";
+
 							}
 						
 							if ( $c8>0 ) {
@@ -442,62 +463,14 @@ if (isset($_POST['submit'])) {
 										
 										</label>';
 								echo '</div>';
+							}else{
+								echo "<input class='input' type='hidden' name='cviii".$cunt.$cun."'  value='$c8' readonly> ";
+
 							}
 							echo'<center><button type="submit"  name="sub'.$cunt.$cun.'">طلب</button></center>';
 				
 						echo'</form>';
 						$cunt+=1;
-
-             
-            
-    
-            
-					
-       				
-					   
-					/* echo "<br>";
-					if ( $c1>0 ) {
-						echo"<br>";
-						echo "عدد المواد المطلوبة من قياس $l1:<lable>$c1</lable>"."<br>";
-					}
-					if ( $c2>0 ){
-						echo "عدد المواد المطلوبة من قياس $l2:<lable>$c2</lable>"."<br>";
-
-
-					} 
-					if ( $c3>0 ){
-						echo "عدد المواد المطلوبة من قياس $l3:<lable>$c3</lable>"."<br>";
-
-
-					} 
-					if ( $c4>0 ){
-						echo "عدد المواد المطلوبة من قياس $l4:<lable>$c4</lable>"."<br>";
-
-
-					} 
-					if ( $c5>0 ){
-						echo "عدد المواد المطلوبة من قياس $l5:<lable>$c5</lable>"."<br>";
-
-
-					} 
-					if ( $c6>0 ){
-						echo "عدد المواد المطلوبة من قياس $l6:<lable>$c6</lable>"."<br>";
-
-
-					} 
-					if ( $c7>0 ){
-						echo "عدد المواد المطلوبة من قياس $l7:<lable>$c7</lable>"."<br>";
-
-
-					} 
-					if ( $c8>0 ){
-						echo "عدد المواد المطلوبة من قياس $l8:<lable>$c8</lable>"."<br>";
-
-
-					} */
-
-					
-					
 					echo "<br>";
 					
 					
@@ -515,9 +488,7 @@ if (isset($_POST['submit'])) {
 				$_SESSION['u2']=$cun;
 			
 		}
-		echo $_SESSION['u'];
-		echo "<br>";
-		echo $_SESSION['u2'];
+		
 		?>
 	</section>
 	
