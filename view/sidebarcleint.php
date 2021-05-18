@@ -33,6 +33,7 @@
         <ul>
             <li> <a href="../view/client.php"> المنتجات</a></li>
             <li> <a href="../view/selectproduct.php">منتج مخصص</a></li>
+            <li> <a href="../view/requ.php">طلباتي </a></li>
             <li> <a href="../logout.php"> تسجيل الخروج</a></li>
         </ul>
 

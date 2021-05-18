@@ -26,42 +26,9 @@ session_start();
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>المستخدمن/Taqaddom Scales Co. Lts.</title></head>
 <body>
-<input type="checkbox" id="check">
-    <label for="check">
-    <i class="fas fa-bars" id="btn"></i>
-    <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <nav class="sidebar">
-        <header>
-            <?php
-
-                echo '<br>';
-                echo '<i class="fas fa-user"></i>';  
-                echo "        مرحبا" ;
-                echo $_SESSION['username']."  " ;
-                echo '<br>';
-            ?>
-        </header>
-
-
-
-        <ul>
-            <li> <a href="./admin.php"> المنتجات</a></li>
-            <li ><a  href="Requests.php">الطلبات</a></li>
-            <li >
-                <a  href="#" class="user-btn"> الموظفين
-                    <span class="fas fa-caret-down  f"> </span>
-                </a>
-                <ul class="user-show">
-                    <li>  <a href="adduser.php">اضافة موظف</a></li>
-                    <li> <a href="users.php">لوحة الموظفين</a></li>
-                </ul>
-            </li>
-            <li> <a href="../logout.php"> تسجيل الخروج</a></li>
-        </ul>
-        
-        
-</nav>
+<?php
+include "./slidepar.php";
+?>
 <script>
         $('.user-btn').click(function(){
             $('nav ul .user-show').toggleClass("show");

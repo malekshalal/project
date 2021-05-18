@@ -67,6 +67,9 @@ border-left-color: cyan;
 .sidebar ul .user-show.show{
     display: block;
 }
+.sidebar ul .req-show.show1{
+    display: block;
+}
 
 .sidebar ul ul li{
     line-height: 42px;

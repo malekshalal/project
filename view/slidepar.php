@@ -36,7 +36,14 @@
 
         <ul>
             <li> <a href="./admin.php"> المنتجات</a></li>
-            <li ><a  href="Requests.php">الطلبات</a></li>
+            <li ><a  href="#" class="req-btn">الطلبات
+                    <span class="fas fa-caret-down  r"> </span>
+                </a>
+                <ul class="req-show">
+                    <li>  <a href="requ.php"> قائمة الطلبات</a></li>
+                    <li> <a href="selectproduct.php"> طلب منتج</a></li>
+                </ul>
+            </li>
             <li >
                 <a  href="#" class="user-btn"> الموظفين
                     <span class="fas fa-caret-down  f"> </span>
@@ -55,6 +62,10 @@
         $('.user-btn').click(function(){
             $('nav ul .user-show').toggleClass("show");
             $('nav ul .f').toggleClass("rotate");
+        });
+        $('.req-btn').click(function(){
+            $('nav ul .req-show').toggleClass("show1");
+            $('nav ul .r').toggleClass("rotate");
         });
        $('nav ul li').click(function(){
             $(this).addClass("active").siblings().removeClass("acrive");

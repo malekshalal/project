@@ -94,7 +94,7 @@ $cntRows = 1;
 if (isset($_POST['submit'])) {
 	if ($_POST['length'] >= 1 && $_POST['length'] <= 10000 + 5) {
 
-		$lingth=$_POST['length'];
+		$_SESSION["length"]=$_POST['length'];
 		$targetLength = $_POST['length'];
 
 		$targets = array();

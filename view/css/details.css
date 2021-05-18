@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+
+*{
+    font-family: 'Amiri';
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+     
+}
+button{
+ 
+    position: relative;
+    background-color: #ffff;
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 8px;
+   
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #000;
+    padding: 2px 38px;
+    font-size: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25px; 
+}
+.color{
+    display: inline-block;
+  
+   
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.lingth{
+    margin-left: 70px;
+   
+}
+table{
+     
+    text-align: right;
+     width: 90%; 
+   
+    margin-left: 5%;
+    margin-right: 5%;
+    
+    
+}
+.contint{
+    width: 10%;
+    text-align: right;
+    display: inline-block;
+    /* margin-left: 70%; */
+    
+}
+
+td{
+    text-align: center;
+}
+
+
+.title{
+    display: inline-block;
+    width:35%;
+    text-align: right;
+    
+} 
+hr{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+
+
+center {
+    height: 500px;
+}
+
+form {
+    background: rgba(65, 165, 244, 0.6);
+    height: 50%;
+   text-align: right;
+    display:list-item     ;
+
+    width: 40%;
+    
+    margin-right: 100px;
+    margin-top: 20px;
+    box-sizing: content-box;
+    
+}
+
+
+@media screen and (max-width:600px){
+    form{
+     width: 90%;
+     height: 80%;
+        
+        margin-left:5%;
+        margin-right: 5%;
+       
+    }
+    
+    
+
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    form{
+     width: 90%;
+     height: 50%;
+        
+        margin-left:5%;
+        margin-right: 5%;
+       
+    }
+    
+    
+
+    
+}
+
+
+
+
+label{
+    margin-right: 10px;
+    text-align: center;
+    width: 600px;
+    top: 17px;
+    position: relative;
+    font-size: 22px;
+    font-family: "Amiri";
+
+}
+#myinput{
+    position: relative;
+    color: black;
+   
+    text-align: center;
+    margin-right: 20px;
+    width: 40px;
+    border-radius: 6px;
+    
+    font-size: 22px;
+    font-family: "Amiri";
+
+    
+}
+.input{
+    text-align: center;
+    position: relative;
+    color: black;
+    top: 17px;
+    margin-right: 20px;
+    line-height: 40px;
+    width: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+}
+input[disabled], input[disabled]:hover {
+    background-color:white;
+ }
+ button{
+ 
+    position: relative;
+    background-color: #3baf9f;
+    display: block;
+    margin: 20px 5px 5px 20px;
+    text-align:center ;
+    border-radius: 12px;
+    border: 2px solid #366a73;
+    padding: 14px 80px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25px; 
+}
+button:hover{
+    background-color: #5390f5;
+}
