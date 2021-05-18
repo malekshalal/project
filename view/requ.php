@@ -22,7 +22,11 @@ include "../host/connection.php";
 <body>
 
 <?php
+if( $_SESSION['role']=="A"){
 include "./slidepar.php";
+}elseif($_SESSION['role']=="C"){
+     include "./sidebarcleint.php";
+}
 ?>
 <section>
 <br>
