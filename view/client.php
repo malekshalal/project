@@ -23,13 +23,18 @@ if (!isset($_SESSION['username'])){
 </head>
 <body>
     <?php
-        include 'navclint.php';
+     
         include "../host/connection.php";
         $query="SELECT * FROM category  ";
         $result=mysqli_query($con,$query);
+      
+           include "../view/sidebarcleint.php";
        
         
     ?>
+
+
+ 
    
     <section>
         
@@ -45,7 +50,7 @@ if (!isset($_SESSION['username'])){
             
             
             <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" >
-            <h4><a href="./productc.php?id=<?php echo $category['id'];?>"><?php echo $category['name'];?></a></h4></div>
+            <h4><a href="./product.php?id=<?php echo $category['id'];?>"><?php echo $category['name'];?></a></h4></div>
             
         <?php
         }

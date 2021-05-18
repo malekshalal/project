@@ -22,7 +22,7 @@ if (!isset($_SESSION['username'])){
 </head>
 <body>
     <?php
-        include 'navadmin.php';
+        include "./slidepar.php";
         $conn=mysqli_connect("localhost","root","","app");
         $query="SELECT * FROM category  ";
         $result=mysqli_query($conn,$query);

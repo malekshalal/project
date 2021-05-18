@@ -21,7 +21,12 @@ if (!isset($_SESSION['username'])){
 </head>
 <body>
     <?php
-    include "./navadmin.php";
+    if($_SESSION['role']=="A"){
+        include "./slidepar.php";
+    }elseif($_SESSION['role']=="C"){
+        include "./sidebarcleint.php";
+    }
+   
 
 
      

@@ -1,5 +1,5 @@
 <?php
-
+ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php
-     include "./navadmin.php";
+     include "./slidepar.php";
      
      
      $error="";
@@ -25,7 +25,8 @@
      }
 
 
-    ?>
+    ?><section>
+        <br>
     <div class="regform"><h1>انشاء حساب موظف جديد</h1></div>
     <div class="body">
         <form action="../controller/createuser.php" method="post" >
@@ -70,6 +71,7 @@
     
     </div>
 
+    </section>
     
 </body>
 </html>

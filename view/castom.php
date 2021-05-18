@@ -161,32 +161,13 @@ if (isset($_POST['submit'])) {
 	<title>منتج مخصص</title>
 </head>
 <body>
-<input type="checkbox" id="check">
-    <label for="check">
-    <i class="fas fa-bars" id="btn"></i>
-    <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-        <header>
-            <?php
-
-           
-                echo '<i class="fas fa-user"></i>';  
-               echo "        مرحبا" ;
-               echo $_SESSION['username']."  " ;
-            ?>
-        </header>
-
-
-
-        <ul>
-            <li> <a href="../view/client.php"> المنتجات</a></li>
-            <li> <a href="../view/selectproduct.php">منتج مخصص</a></li>
-            <li> <a href="../logout.php"> تسجيل الخروج</a></li>
-        </ul>
-
-
-    </div>
+<?php
+ if($_SESSION['role']=="A"){
+	include "./slidepar.php";
+}elseif($_SESSION['role']=="C"){
+	include "./sidebarcleint.php";
+}
+?>
 
 
 	<section>

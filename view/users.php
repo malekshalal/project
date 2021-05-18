@@ -26,15 +26,56 @@ session_start();
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>المستخدمن/Taqaddom Scales Co. Lts.</title></head>
 <body>
-    <?php
-    include "./navadmin.php";
+<input type="checkbox" id="check">
+    <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <nav class="sidebar">
+        <header>
+            <?php
 
-    ?>
+                echo '<br>';
+                echo '<i class="fas fa-user"></i>';  
+                echo "        مرحبا" ;
+                echo $_SESSION['username']."  " ;
+                echo '<br>';
+            ?>
+        </header>
 
-    <div class="nav2">
-        <div class ="right"> <a href="users.php">الموظفين</a></div>
-        <div class ="left"><a href="adduser.php">اضافة موظف</a></div>
-    </div>
+
+
+        <ul>
+            <li> <a href="./admin.php"> المنتجات</a></li>
+            <li ><a  href="Requests.php">الطلبات</a></li>
+            <li >
+                <a  href="#" class="user-btn"> الموظفين
+                    <span class="fas fa-caret-down  f"> </span>
+                </a>
+                <ul class="user-show">
+                    <li>  <a href="adduser.php">اضافة موظف</a></li>
+                    <li> <a href="users.php">لوحة الموظفين</a></li>
+                </ul>
+            </li>
+            <li> <a href="../logout.php"> تسجيل الخروج</a></li>
+        </ul>
+        
+        
+</nav>
+<script>
+        $('.user-btn').click(function(){
+            $('nav ul .user-show').toggleClass("show");
+            $('nav ul .f').toggleClass("rotate");
+        });
+       $('nav ul li').click(function(){
+            $(this).addClass("active").siblings().removeClass("acrive");
+       });
+</script>
+    
+    
+   <section>
+   <br>
+   
     <div class="container">
          <h2 class="text-center text-info">لوحة الموظفين</h2>
 		 
@@ -123,6 +164,7 @@ session_start();
 			getUserStatus();
 		},7000);
 	</script>
+   </section>
 
 
 
