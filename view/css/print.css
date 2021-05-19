@@ -38,9 +38,9 @@ title{
 
 .left{
    /*  width: auto; */
-    margin-left: 40px;
+    /* margin-left: 40px;
     color: blue;
-    font-size: 5px;
+    font-size: 5px; */
 }
 
 h1{
@@ -54,10 +54,14 @@ h1{
 
 .print{
     height: 80px;
+    /* width: 500px; */
+    margin-top: 20px;
 }
 
 .print h3{
     float: right;
+    
+    text-align: center;
     font-size: 25px;
     position: relative;
     box-sizing: border-box;
@@ -65,13 +69,14 @@ h1{
 
 .print label{
     float: left;
-    margin-right: 90px;
+    
     margin-top: 29px;
     position: relative;
     box-sizing: border-box;
     font-size: 25px;
 
 }
+
 
 @media print 
 {

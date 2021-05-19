@@ -25,6 +25,18 @@
 </head>
 <body>
     <?php
+
+    
+    if (isset($_GET['massege'])){
+        if($_GET['massege']==1){
+         
+            echo '<script type="text/javascript">';
+            echo 'window.alert("  تم الطلب بانتظار الموافقه ")';  
+            echo '</script>';
+        }
+    }
+
+
      if($_SESSION['role']=="A"){
         include "./slidepar.php";
     }elseif($_SESSION['role']=="C"){

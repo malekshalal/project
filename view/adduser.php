@@ -58,8 +58,8 @@
                 <h2 class="name">نوع الحساب</h2>
                 <select class="option"  name="type" required >
                     <option disabled="disabled" selected="selected" value=""  >اختر نوع الحساب</option>
-                    <option value="M">مسؤول مخزن</option>
-                    <option value="R">مسؤول التصنيع</option>
+                    <option value="R">مسؤول مخزن</option>
+                    <option value="M">مسؤول التصنيع</option>
                 </select>
             </div>
             

@@ -31,7 +31,7 @@ if (!isset($_SESSION['username'])){
 
      
         
-        $conn=mysqli_connect("localhost","root","","app");
+        include "../host/connection.php";
        
        
         
@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])){
                 <ul>
                     <?php
                         $query1="SELECT * FROM category  ";
-                        $result1=mysqli_query($conn,$query1);
+                        $result1=mysqli_query($con,$query1);
                         
 
                         if(mysqli_num_rows($result1)>0){
@@ -83,7 +83,7 @@ if (!isset($_SESSION['username'])){
        <div class="container_BOX">
            <?php
                 $query2="SELECT * FROM product WHERE id_cat = $id  ";
-                $result2=mysqli_query($conn,$query2);
+                $result2=mysqli_query($con,$query2);
                 
 
                 if(mysqli_num_rows($result2)>0){

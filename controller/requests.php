@@ -34,9 +34,17 @@ if ($con->connect_error) {
                 
             $query="INSERT INTO requests (username,id_prod,id_price,color,Application_date,end_date,num1,num2,num3,num4,num5,num6,num7,num8,length) 
             VALUES ('$username','$id_prod','$id_price','$color','$date_now','$date_end','$c1','$c2','$c3','$c4','$c5','$c6','$c7','$c8','$length') ";
-            $result = mysqli_query($con, $query); 
-            header("Location:../view/selectproduct.php");
-           
+            /* $result = mysqli_query($con, $query);  */
+            /* header("Location:../view/selectproduct.php?s"); */
+            if (mysqli_query($con, $query)) {
+                
+                header("Location:../view/selectproduct.php?massege=1");
+             } else {
+                echo "Error: " . $query . "
+                " . mysqli_error($con);
+                }
+                    
+            
 
                
                continue;

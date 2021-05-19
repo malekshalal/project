@@ -11,7 +11,10 @@
       }elseif($_SESSION['role']=="C"){
           header("location:../view/client.php");
 
-      }
+      }elseif($_SESSION['role']=="M"){
+        header("location:../view/manufacturing.php");
+
+    }
 
 
  } 

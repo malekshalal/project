@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +11,15 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تفاصيل الطلب</title>
 </head>
-<body>
+<body onload="print()" >
     <?php
-    include "./slidepar.php";
+    
     include "../host/connection.php";
     if(!isset($_GET['id'])){
-        header("location:../view/requ.php");
+        header("location:../view/manufacturing.php");
     
     }
-    $_SESSION['idu']=$_GET['id'];
+   
 	$id=$_GET['id'];
     $query = "SELECT * FROM requests WHERE id=$id";
     $result=mysqli_query($con,$query);
@@ -32,6 +32,7 @@ session_start();
     $c6=$row['num6'];
     $c7=$row['num7'];
     $c8=$row['num8'];
+	$date_end=$row['end_date'];
 
 
 
@@ -47,8 +48,10 @@ session_start();
     $l6=$row2['p6'];
     $l7=$row2['p7'];
     $l8=$row2['p8'];
-    $sum=$l1*$c1+$l2*$c2+$l3*$c3+$l4*$c4+$l5*$c5+$l6*$c6+$l7*$c7+$l8*$c8;
+   
     ?>
+    <img src="../view/css/image/Screenshot-5010ca2c-a01b-11eb-9b63-2e8e01ead2da.png" alt="">
+    <hr>
     <section>
     <br>
     
@@ -67,15 +70,34 @@ session_start();
         <br>
         <br>
                     <?php
-                    echo'<center>';
-                        echo '<form action="../controller/update_req_status.php" method="post" >';
+                    echo'<center class="print">';
+                       
+					echo '<div>';
+								
+						echo'<label for="myinput">
+							'.$date_end.'
 
-                            echo "<h3 style='margin-right: 10px;'>السعر :$sum</h3>";
-							echo "<input class='input' type='hidden' name='id'  value='$id ' > ";
+					</label>';
+				
+					echo '<label for="myinput">
+					
+					
+					:تاريخ انتهاء الطلب     
+						
+						
+						
+						
+						</label>';
+				echo '</div>';
+                         
+							
 							if ( $row['num1']>0 ) {
 								echo '<div>';
 								
-									echo "<input class='input' type='text' name='ci'  value='$c1 ' > ";
+									echo'<label for="myinput">
+                                        '.$c1.'
+
+                                    </label>';
 								
 									echo '<label for="myinput">
 									
@@ -87,16 +109,16 @@ session_start();
 										
 										</label>';
 								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='ci'  value='$c1' > ";
-
 							}
 
 
 							if ( $row['num2']>0 ) {
 								echo '<div>';
 								
-									echo "<input class='input' type='text' name='cii'  value='$c2' > ";
+									echo'<label for="myinput">
+                                        '.$c2.'
+
+                                    </label>';
 								
 									echo '<label for="myinput">
 									
@@ -108,15 +130,15 @@ session_start();
 										
 										</label>';
 								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='cii'  value='$c2'  > ";
-
 							}
 
 							if ( $row['num3']>0 ) {
 								echo '<div>';
 								
-									echo "<input class='input' type='text' name='ciii'  value='$c3' > ";
+									echo'<label for="myinput">
+                                        '.$c3.'
+
+                                    </label>';
 								
 									echo '<label for="myinput">
 									
@@ -128,15 +150,15 @@ session_start();
 										
 										</label>';
 								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='ciii'  value='$c3' > ";
-
 							}
 						
 							if ($row['num4']>0 ) {
 								echo '<div>';
 								
-									echo "<input class='input' type='text' name='civ'  value='$c4' > ";
+									echo'<label for="myinput">
+                                        '.$c4.'
+
+                                    </label>';
 								
 									echo '<label for="myinput">
 									
@@ -148,14 +170,14 @@ session_start();
 										
 										</label>';
 								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='civ'  value='$c4' > ";
-
 							}
 							if ( $row['num5']>0 ) {
 								echo '<div>';
 								
-									echo "<input class='input' type='text' name='cv'  value='$c5' > ";
+									echo'<label for="myinput">
+                                        '.$c5.'
+
+                                    </label>';
 								
 									echo '<label for="myinput">
 									
@@ -167,15 +189,15 @@ session_start();
 										
 										</label>';
 								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='cv'  value='$c5' > ";
-
 							}
 						
 							if ( $row['num6']>0 ) {
 								echo '<div>';
 								
-									echo "<input class='input' type='text' name='cvi'  value='$c6' > ";
+									echo'<label for="myinput">
+                                        '.$c6.'
+
+                                    </label>';
 								
 									echo '<label for="myinput">
 									
@@ -187,14 +209,14 @@ session_start();
 										
 										</label>';
 								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='cvi'  value='$c6' > ";
-
 							}
 							if ( $row['num7']>0 ) {
 								echo '<div>';
 								
-									echo "<input class='input' type='text' name='cvii'  value='$c7' > ";
+									echo'<label for="myinput">
+                                        '.$c7.'
+
+                                    </label>';
 								
 									echo '<label for="myinput">
 									
@@ -206,38 +228,28 @@ session_start();
 										
 										</label>';
 								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='cvii'  value='$c7' > ";
-
 							}
 						
 							if ( $row['num8']>0 ) {
-								echo '<div>';
+                                echo '<div>';
 								
-									echo "<input class='input' type='text' name='cviii'  value='$c8' > ";
-								
-									echo '<label for="myinput">
-									
-									
-									:عدد المواد المطلوبة من قياس '.$l8.'
-										
-										
-										
-										
-										</label>';
-								echo '</div>';
-							}else{
-								echo "<input class='input' type='hidden' name='cviii'  value='$c8' > ";
+                                echo'<label for="myinput">
+                                    '.$c8.'
 
-							}
+                                </label>';
                             
-							if( $_SESSION['role']=="A"){
-								echo'<center><button type="submit"  name="sub">موافق</button></center>';
+                                echo '<label for="myinput">
+                                
+                                
+                                :عدد المواد المطلوبة من قياس '.$l8.'
+                                    
+                                    
+                                    
+                                    
+                                    </label>';
+                            echo '</div>';
 							}
-                        
-				
-						echo'</form>';
-                        echo '</center>';
+                       echo '</center>';
                     ?>
     
     </section>

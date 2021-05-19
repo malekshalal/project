@@ -23,7 +23,7 @@ if(isset($_POST['reg'])){
         $result=mysqli_query($con,$query);
         
 
-        
+    
       
 
 

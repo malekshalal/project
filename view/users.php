@@ -29,15 +29,7 @@ session_start();
 <?php
 include "./slidepar.php";
 ?>
-<!-- <script>
-        $('.user-btn').click(function(){
-            $('nav ul .user-show').toggleClass("show");
-            $('nav ul .f').toggleClass("rotate");
-        });
-       $('nav ul li').click(function(){
-            $(this).addClass("active").siblings().removeClass("acrive");
-       });
-</script> -->
+
     
     
    <section>

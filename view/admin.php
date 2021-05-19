@@ -23,9 +23,10 @@ if (!isset($_SESSION['username'])){
 <body>
     <?php
         include "./slidepar.php";
+        include "../host/connection.php";
         $conn=mysqli_connect("localhost","root","","app");
-        $query="SELECT * FROM category  ";
-        $result=mysqli_query($conn,$query);
+        $query="SELECT * FROM category WHERE Special=1  ";
+        $result=mysqli_query($con,$query);
        
         
     ?>
@@ -54,8 +55,11 @@ if (!isset($_SESSION['username'])){
             echo '<script type="text/javascript">';
             echo 'window.alert("لا يوجد منتجات حاليا")';  
             echo '</script>';  
+           echo' <center><div class="box" style=" width:67%; "  ><h4 style ="color:red;font-size: 22px;">لايوجد منتجات متوفره حاليا </h4></div></center>';
          }
-         ?>
+         ?> 
+
+</div>
         
         
         
