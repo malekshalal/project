@@ -321,7 +321,7 @@ session_start();
                                                     $number_repo=$row['id_repo'];
                                                     $result2=mysqli_query($con,"SELECT * FROM repository WHERE id=$number_repo /* GROUP BY number  */   ");
                                                     $row2=mysqli_fetch_assoc($result2);
-                                                    $number=$row2['id'];
+                                                    $number=$row2['number'];
                                                     $name=$row2['name'];
                                                     echo '<option value="'.$number.'">'.$name.' </option>';
                                                 

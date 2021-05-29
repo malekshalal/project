@@ -20,7 +20,7 @@ if(isset($_POST['sub'])){
     $c8=$_POST['c8'];
 
 
-    $result=mysqli_query($con,"SELECT * FROM repository WHERE id =$select ");
+    $result=mysqli_query($con,"SELECT * FROM repository WHERE number =$select ");
     $row=mysqli_fetch_assoc($result);
         if($row['id_product']==$id_prod){ 
             $sum=$row['quantity']+$cii;
@@ -38,7 +38,7 @@ if(isset($_POST['sub'])){
 
             
              mysqli_query($con,"UPDATE  repository SET 	quantity=$sum ,l1=$l1,l2=$l2,l3=$l3,l4=$l4,l5=$l5,l6=$l6,l7=$l7,l8=$l8
-             WHERE id =$select AND id_product=$id_prod");
+             WHERE number=$select AND id_product=$id_prod");
 
 
             mysqli_query($con,"INSERT INTO  manufacturing(id_user,succeded,fail,id_requests ,id_product ,id_length ,quantity) VALUES
