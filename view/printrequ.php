@@ -40,14 +40,19 @@ session_start();
     $price=$row['id_price'];
     $result2=mysqli_query($con,"SELECT * FROM price WHERE id =$price ");
     $row2=mysqli_fetch_assoc($result2);
-    $l1=$row2['p1'];
-    $l2=$row2['p2'];
-    $l3=$row2['p3'];
-    $l4=$row2['p4'];
-    $l5=$row2['p5'];
-    $l6=$row2['p6'];
-    $l7=$row2['p7'];
-    $l8=$row2['p8'];
+    
+    $lingth=$row['id_prod'];
+	/* echo $lingth; */
+    $result3=mysqli_query($con,"SELECT * FROM length WHERE id_product  =$lingth ");
+    $row3=mysqli_fetch_assoc($result3);
+    $l1=$row3['l1'];
+    $l2=$row3['l2'];
+    $l3=$row3['l3'];
+    $l4=$row3['l4'];
+    $l5=$row3['l5'];
+    $l6=$row3['l6'];
+    $l7=$row3['l7'];
+    $l8=$row3['l8'];
    
     ?>
     <img src="../view/css/image/Screenshot-5010ca2c-a01b-11eb-9b63-2e8e01ead2da.png" alt="">

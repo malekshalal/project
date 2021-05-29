@@ -27,6 +27,15 @@ include "./slidepar.php";
 }elseif($_SESSION['role']=="C"){
      include "./sidebarcleint.php";
 }
+
+if (isset($_GET['massege'])){
+     if($_GET['massege']==1){
+      
+         echo '<script type="text/javascript">';
+         echo 'window.alert("  تم الطلب بانتظار الموافقه ")';  
+         echo '</script>';
+     }
+ }
 ?>
 <section>
 <br>
@@ -68,25 +77,43 @@ include "./slidepar.php";
               $i=1;
               while($row=mysqli_fetch_assoc($result)){
               $status='لم يتم الموافقه';
-              $class="btn-danger";
-              $type='';
-             
               
-              if($row['status']==1){
-                   $status='تمت الموافقه';
-                   $class="btn-success";
-                  
-                   
-              }
-              if($row['end_date']<$now){
+              $type='';
+              if($row['end_date']>$now){
                $status=' انتهت صلاحية الطلب';
                $class="btn-danger";
 
+              }else{
+                    if($row['status']==0){
+
+                         $status;
+                         $class="btn-wait";
+     
+                    }elseif($row['status']==1){
+     
+                         $status='تمت الموافقه';
+                         $class="btn-done";
+     
+                    }elseif($row['status']==2){
+     
+                    $status='الطلب جاهز ';
+                    $class="btn-success";
+                    
+                    }
               }
+              
               ?>	
               <tr>
-                   <td><a href="../controller/deletrequ.php?id=<?php echo $row['id']  ?>"><i class="fas fa-trash"></i></a></td>
-                   <td><a href="../view/details.php?id=<?php echo $row['id']  ?>"><i class="fas fa-info"></i></a></td>
+                   <td><a  href="../controller/deletrequ.php?id=<?php echo $row['id']  ?>"><i class="fas fa-trash"></i></a></td>
+                   <?php if($row['end_date']>=$now){
+                         
+                         echo '<td disabled="disabled" ><i class="fas fa-info" style="color: red;"></i></td>';
+
+                         }else{
+                              echo'<td><a href="../view/details.php?id='. $row['id'].'"><i class="fas fa-info" "></i></a></td>';
+                         }
+
+                   ?>
                    <td><button type="button" class="btn <?php echo $class?>"><?php echo $status?></button></td>
                    
                    <td style="text-align: center;"><?php $price=$row['id_price'];

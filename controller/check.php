@@ -6,8 +6,8 @@ session_start();
  if (isset($_POST['login'])){
      
     $username = mysqli_real_escape_string($con, $_POST["username"]);  
-    $password = mysqli_real_escape_string($con, $_POST["password"]);  
-      /*   $password = md5($password);   */
+    $password1 = mysqli_real_escape_string($con, $_POST["password"]);  
+    $password = md5($password1);   
     $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";  
         
     $result = mysqli_query($con, $query);

@@ -1,5 +1,9 @@
 <?php
  session_start();
+ if (!isset($_SESSION['username'])){
+    header("location:login.php");
+    die();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +37,7 @@
             
            <div class="div">
             <h2 class="name">اسم المستخدم</h2>
-            <input class="input" type="text" name="name" placeholder="ادخل اسم المستخدم" required><br>
+            <input class="input" type="text" name="name"pattern="[A-Za-z]{0,20}" title="ادخل الاسم باللغة الانجليزية" placeholder="ادخل اسم المستخدم" required><br>
                 
            </div>
            <p class="error" style="color:red;text-align:center;     font-size: 17px;"><?php echo $error;?></p>
@@ -49,7 +53,7 @@
             
             <div class="div">
                 <h2 class="name">هاتف</h2>
-                <input class=" input " type="text" name="phone"  placeholder="ادخل رقم الهاتف المكون من 7 خانات" required> 
+                <input class=" input " type="text" name="phone" pattern="[0-9]{9,10}" placeholder="ادخل رقم الهاتف" title="الرقم مكون من9 -10 خانات   " required> 
                
                 
             </div>

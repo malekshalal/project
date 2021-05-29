@@ -12,7 +12,7 @@
     $c7=$_POST['cvii'];
     $c8=$_POST['cviii'];
     $query = "UPDATE requests  SET status=1,num1=$c1,num2=$c2, num3=$c3,num4=$c4,num5=$c5,num6=$c6,num7=$c7,num8=$c8 WHERE  id=$id";
-    echo $c1."   ";
+    
     $result = mysqli_query($con, $query);
     if ($result){
         echo "تمت الموافقه";
@@ -21,7 +21,13 @@
     else{
         echo "ERROR " . mysqli_error($con);
     }
- } 
+ }elseif(isset($_POST['sub2'])){
+    $id=$_POST['id'];
+    $query = "UPDATE requests  SET status=2 WHERE  id=$id";
+    
+    $result = mysqli_query($con, $query);
+    header("location:../view/requ.php");
+ }
 
 
 ?>

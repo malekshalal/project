@@ -5,7 +5,7 @@
         die();
     }
     include "../host/connection.php";
-    $query="SELECT * FROM product";
+    $query="SELECT * FROM product GROUP BY number ";
     $result=mysqli_query($con,$query);
 
  
@@ -27,14 +27,7 @@
     <?php
 
     
-    if (isset($_GET['massege'])){
-        if($_GET['massege']==1){
-         
-            echo '<script type="text/javascript">';
-            echo 'window.alert("  تم الطلب بانتظار الموافقه ")';  
-            echo '</script>';
-        }
-    }
+   
 
 
      if($_SESSION['role']=="A"){

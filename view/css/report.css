@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
+
+*{  
+    font-family: 'Amiri';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+.content{
+   padding:  0 10%;
+    margin: 20px auto 0; 
+
+}
+
+label{
+    font-size: 15px;
+    text-align: right;
+    margin-left: 15px;
+    
+    
+    
+}
+table{
+    
+    
+    text-align: right;
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+button{
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 115px;
+}
+
+ @media print 
+{
+  @page { margin: 0; }
+  body  { margin: 1.6cm; }
+}

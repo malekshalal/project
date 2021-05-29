@@ -14,6 +14,8 @@
       }elseif($_SESSION['role']=="M"){
         header("location:../view/manufacturing.php");
 
+    }elseif($_SESSION['role']=="R"){
+        header("location:../view/repository.php");
     }
 
 

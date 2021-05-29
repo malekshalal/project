@@ -99,6 +99,16 @@ body{
     cursor: pointer;
 }
 
+.btn-done {
+    color: #fff;
+    background-color: #1f2fbe;
+    border-color: #1f2fbe;
+}
+.btn-wait{
+    color: #fff;
+    background-color: #be741f;
+    border-color: #be741f;
+}
 .btn-success {
     color: #fff;
     background-color: #28a745;
@@ -109,7 +119,14 @@ body{
     background-color: #dc3545;
     border-color: #dc3545;
 }
-
+.fa-info.disabled,
+.fa-info[disabled],
+.disabled > .fa-info,
+[disabled] > .fa-info {
+    opacity: 0.6;
+    cursor: not-allowed;
+    
+}
 .btn {
     display: inline-block;
   

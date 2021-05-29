@@ -19,6 +19,7 @@ if(isset($_POST['reg'])){
         
 
     }else{
+        $password = md5($password);  
         $query="INSERT INTO users (username,password,email,phone,typeuser) VALUES ('$username','$password','$email',$phone,'$type')";
         $result=mysqli_query($con,$query);
         

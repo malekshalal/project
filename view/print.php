@@ -18,69 +18,7 @@
  -->
 <body onload="print()">
 
-<!-- <div class="hedar">
 
-
-    <div class="right">
-    <h4>
-        TAQADDOM SCALES CO. LTD.NEIROUKH BROS.
-
-        </h4>
-        <h4>
-            فلسطين -الخليل
-        </h4>
-
-        <h4>
-           العنوان : المنطقة الصناعية
-        </h4>
-        <h4>
-       صندوق رقم :408
-        </h4>
-        <h4>
-            هاتف رقم:+972 2 2259830
-        </h4>
-        <h4>
-            فاكس رقم:+972 2 2226827
-        </h4>
-        <h4>
-              info@taqaddom.com:بريد الكتروني
-        </h4>
-    </div>
-
-    <div class="image">
-              <img src="../view/css/image/logo.png" alt="">
-
-    </div>
-    <div class="left">
-        <h4>
-        TAQADDOM SCALES CO. LTD.NEIROUKH BROS.
-
-        </h4>
-        <h4>
-            Hebron - Palestine
-        </h4>
-
-        <h4>
-            Address : Industrial Zone
-        </h4>
-        <h4>
-        P.O.Box : 408
-        </h4>
-        <h4>
-        phone    : +972 2 2259830
-
-        </h4>
-        <h4>
-        Fax         : +972 2 2226827
-
-        </h4>
-        <h4>
-        E-mail : info@taqaddom.com
-
-
-        </h4>
-    </div>
-</div> -->
 <img src="../view/css/image/Screenshot-5010ca2c-a01b-11eb-9b63-2e8e01ead2da.png" alt="">
 <hr>
     

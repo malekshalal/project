@@ -2,7 +2,7 @@
 session_start(); 
 include "../host/connection.php";
 $date_now=date("Y-m-d");
-$date_end=0;
+
 $username=$_SESSION["id"];
 $id_prod= $_SESSION['id_prod'];
 $id_price= $_SESSION['width'];
@@ -28,7 +28,7 @@ if ($con->connect_error) {
             $c6=$_POST['cvi'.$i.$j.''];
             $c7=$_POST['cvii'.$i.$j.''];
             $c8=$_POST['cviii'.$i.$j.''];
-
+            $date_end=$_POST['date'.$i.$j.''];
             
              
                 
@@ -38,7 +38,7 @@ if ($con->connect_error) {
             /* header("Location:../view/selectproduct.php?s"); */
             if (mysqli_query($con, $query)) {
                 
-                header("Location:../view/selectproduct.php?massege=1");
+                header("Location:../view/requ.php?massege=1");
              } else {
                 echo "Error: " . $query . "
                 " . mysqli_error($con);

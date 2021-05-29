@@ -2,7 +2,7 @@
 include "../host/connection.php";
 include "../controller/generatepass.php";
 $username = $_POST['name'];
-$password=generatepassword();
+$passwordp=generatepassword();
 $email=$_POST['name']."@gmail.com";
 $phone=$_POST['phone'] ;
 $type=$_POST['type'];
@@ -18,6 +18,7 @@ if(isset($_POST['reg'])){
         
 
     }else{
+        $password=md5($passwordp);
         $query="INSERT INTO users (username,password,email,phone,typeuser) VALUES ('$username','$password','$email',$phone,'$type')";
         $result=mysqli_query($con,$query);
         
@@ -26,7 +27,7 @@ if(isset($_POST['reg'])){
       
 
 
-        header("Location:../view/print.php?username=$username&&password=$password");
+        header("Location:../view/print.php?username=$username&&password=$passwordp");
     }
 
 }

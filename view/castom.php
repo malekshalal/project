@@ -448,7 +448,23 @@ if (isset($_POST['submit'])) {
 								echo "<input class='input' type='hidden' name='cviii".$cunt.$cun."'  value='$c8' readonly> ";
 
 							}
+							$date_now=date("d/m/Y");
+							
+							echo'<input type="date" name="date'.$cunt.$cun.'"  class="date" data-date-format="d m Y" value="'.date('Y-m-d').'" selected="selected">
+							';echo '<label for="myinput">
+									
+									
+							:    تاريخ انتهاء الطلب 
+								
+								
+								
+								
+								</label>';
+							/* echo  "<input class='input' type='date' name='date".$cunt.$cun."'   readonly> "; */
 							echo'<center><button type="submit"  name="sub'.$cunt.$cun.'">طلب</button></center>';
+
+
+
 				
 						echo'</form>';
 						$cunt+=1;

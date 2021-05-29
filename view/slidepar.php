@@ -53,6 +53,7 @@
                     <li> <a href="users.php">لوحة الموظفين</a></li>
                 </ul>
             </li>
+            <li> <a href="../view/add_repository.php"> اضافة مخزن </a></li>
             <li> <a href="../logout.php"> تسجيل الخروج</a></li>
         </ul>
         

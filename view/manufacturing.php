@@ -59,7 +59,7 @@ include "../host/connection.php";
                 
                 
                
-                if($row['end_date']<$now){
+                if($row['end_date']>$now){
                 $status='   انتهت صلاحية الطلب ';
                 $class="btn-danger";
 
