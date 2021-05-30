@@ -22,16 +22,11 @@ if (!isset($_SESSION['username'])){
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .name{
-   
-    color: #000;
-   
     
-    }
     </style>
     <title>اضافة منتج</title>
 </head>
-<body style="background: white;">
+<body >
 <?php
 include "./sliderepo.php";
       $error="";
@@ -44,9 +39,9 @@ include "./sliderepo.php";
         if($_GET['Erorr2']==6){
             $error2="الرقم مستخدم";
         }
-      }elseif(isset($_GET['massege'])){
-          if($_GET['massege']==10){
-              echo '<script>alert("تم  اضافة مخزن")</script>';
+      }elseif(isset($_GET['Erorr3'])){
+          if($_GET['Erorr3']==7){
+              echo '<script>alert("صيغة الصوره غير صحيحه")</script>';
           }
       }
 
@@ -56,14 +51,14 @@ include "./sliderepo.php";
 
 <section>
             <br>
-            <div class="form" style="color:black;"><h1>اضافة منتج</h1></div>
+            <div class="form" ><h1>اضافة منتج</h1></div>
             <div class="body">
             
                 <form action="../controller/add_prod.php" method="post" enctype="multipart/form-data">
             
                 <div class="div">
                     <h2 class="name"> اسم المنتج</h2>
-                    <input class="input" type="text" name="name"pattern="[أ-ي[ ]]{0,20}" title="ادخل الاسم باللغة العربيه" placeholder="ادخل اسم المنتج" required><br>
+                    <input class="input" type="text" name="name"pattern="[أ-ي\s]{0,20}" title="ادخل الاسم باللغة العربيه" placeholder="ادخل اسم المنتج" required><br>
                     
                 </div>
                 <p class="error" style="color:red;text-align:center;     font-size: 17px;"><?php echo $error;?></p>
@@ -83,7 +78,7 @@ include "./sliderepo.php";
                  </div>
                  <div class="div">
                     <h2 class="name"> لون المنتج </h2>
-                    <input class="color" type="color"  name="color" value="#0000">
+                    <input class="color" type="color"  name="color" value="#0000"><br>
                  </div>
                  
                     

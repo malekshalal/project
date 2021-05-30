@@ -49,14 +49,14 @@ if (!isset($_SESSION['username'])){
             
                 <div class="div">
                     <h2 class="name"> اسم المخزن</h2>
-                    <input class="input" type="text" name="name"pattern="[أ-ي[ ]]{0,20}" title="ادخل الاسم باللغة العربيه" placeholder="ادخل اسم المخزن" required><br>
+                    <input class="input" type="text" name="name"pattern="[أ-ي\s]{0,20}" title="ادخل الاسم باللغة العربيه" placeholder="ادخل اسم المخزن" required><br>
                     
                 </div>
                 <p class="error" style="color:red;text-align:center;     font-size: 17px;"><?php echo $error;?></p>
             
                 <div class="div">
                     <h2 class="name"> رقم المخزن</h2>
-                    <input class="input" type="number" name="number"pattern="[9-1]{0,11}" title="رقم المخزن كبير   " placeholder="ادخل رقم المخزن " required><br>
+                    <input class="input" type="number" name="number"pattern="[1-9]{0,11}" title="رقم المخزن كبير   " placeholder="ادخل رقم المخزن " required><br>
                     
                  </div>
 

@@ -152,7 +152,7 @@ button:hover{
 
   }
   /********************************************************/
-  .color{
+   .color{
     position: relative;
     margin-left: 21%;
     margin-top: 43px;
@@ -162,35 +162,6 @@ button:hover{
     padding: 0 22px;
     font-size: 16px;
 
-}
+} 
 
 
-.custom-file-input::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-  .custom-file-input::before {
-  /*   content: 'اختار الصوره'; */
-    display: inline-block;
-    position: relative;
-    /* margin-left: 21%; */
-    margin-top: 43px;
-    /* line-height: 40px; */
-    width: 58%;
-  /*   background: linear-gradient(top, #f9f9f9, #e3e3e3); */
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    /* outline: none; */
-    /* white-space: nowrap; */
-    /* -webkit-user-select: none; */
-    cursor: pointer;
-   /*  color: white; */
-    font-weight: 700;
-    font-size: 10pt;
-  }
-  .custom-file-input:hover::before {
-    border-color: black;
-  }
-  .custom-file-input:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  }
