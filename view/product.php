@@ -93,7 +93,7 @@ if (!isset($_SESSION['username'])){
             <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4> <?php echo $product['name'];?> </h4>
 
                         
-                <img src="<?php echo $product['image'] ?>" alt="">
+                <img src="../img/<?php echo $product['image'] ?>" alt="">
 
                 <div class="price">
                     <h5 >price :<?php echo  $product['price']; ?></h5>

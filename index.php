@@ -2,6 +2,7 @@
  include "logs.php";
  $log="the user entered ";
  logger($log);
+ 
 
 ?>
 
@@ -46,7 +47,7 @@
 
 <div class="footer"  style="margin-top: 50px;">
         
-        <div style="width: 100%;height: 300px;background-color:rgba(0,0,0,0.6);overflow: hidden;">
+        <div style="width: 100%;height: 300px;overflow: hidden;">
 
 
         <div style="margin:5%;border:2px white solid ;">
@@ -72,7 +73,7 @@
 
     <hr>
 
-    <div style="width: 100%;height: 300px;background-color:rgba(0,0,0,0.6);overflow: hidden;">
+    <div style="width: 100%;height: 300px;overflow: hidden;">
 
 
     <div style="margin:5%;border:1px white solid ;">
@@ -106,7 +107,7 @@
 
 
     <hr>
-        <div style="width: 100%;height: 707px;background-color:rgba(0,0,0,0.6);overflow: hidden;text-align: center;color: white">
+        <div style="width: 100%;height: 707px;overflow: hidden;text-align: center;color: white">
             <div style="margin-top: 30px;">
                 <img id="img1" src="./view/css/image/logo.png" style="background-color:rgba(1125,7777,99990,0.1);margin-right: 1%;float: right;border:1px white solid ;border-radius: 8px;margin-top: -20px; ">
 

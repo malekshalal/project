@@ -83,7 +83,7 @@ h3{
 
     /* to perfect image in all screen size  */
    html { 
-     background: #000;
+     background:url(../css/image/1567674.jpg);
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
@@ -119,8 +119,8 @@ h3{
    
     /* to perfect image in all screen size  */
    html { 
-    background: #000; 
-     -webkit-background-size: cover;
+    background:url(../css/image/1567674.jpg);
+    -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
      background-size: cover;

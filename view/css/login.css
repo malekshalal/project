@@ -74,7 +74,13 @@ border-bottom-right-radius: 5px;
 }
 @media screen and (min-width: 1000px) {
 
-
+  html { 
+    background:url(../css/image/shutterstock.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
     /* to perfect image in all screen size  */
   
    .loginform
@@ -100,7 +106,13 @@ border-bottom-right-radius: 5px;
    @media screen and (max-width: 999px )  {
 
 
-    /* to perfect image in all screen size  */
+    html { 
+      background:url(../css/image/shutterstock.jpg);
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+     }
   
    .loginform
    {
@@ -117,3 +129,4 @@ border-bottom-right-radius: 5px;
    
    
    }
+   

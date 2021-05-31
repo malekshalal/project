@@ -63,3 +63,36 @@ section{
     }
 }
 
+
+@media screen and (max-width: 999px )  {
+   
+   
+    /* to perfect image in all screen size  */
+   html { 
+    background:url(../css/image/dark-paper.jpg);
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   
+   }
+
+   @media screen and (min-width: 1000px) {
+
+
+    /* to perfect image in all screen size  */
+   html { 
+    background:url(../css/image/dark-paper.jpg);
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   }

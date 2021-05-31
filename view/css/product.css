@@ -133,7 +133,7 @@ section .container .slide ul li a{
 
 .box img{
     display: block;
-    width: 100%;
+    width: 250px;
     height: 248px;
     object-fit: cover;
 }

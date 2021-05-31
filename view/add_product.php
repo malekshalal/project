@@ -22,7 +22,41 @@ if (!isset($_SESSION['username'])){
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-    
+    @media screen and (min-width: 1000px) {
+
+
+  
+html { 
+  background: #32312f no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 999px )  {
+
+
+ /* to perfect image in all screen size  */
+html { 
+  background: #32312f no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+}
     </style>
     <title>اضافة منتج</title>
 </head>
