@@ -91,9 +91,9 @@ session_start();
 
 
 
-        $result2=mysqli_query($con,"SELECT number FROM product WHERE id=$id_prod ");
+        $result2=mysqli_query($con,"SELECT id FROM product WHERE id=$id_prod ");
         $row2=mysqli_fetch_assoc($result2);
-        $number_broduct=$row2['number']; 
+        $number_broduct=$row2['id']; 
         
         
        
@@ -316,7 +316,7 @@ session_start();
                                        /* SELECT DISTINCT column_name FROM table_name */
                                        /* SELECT field_name FROM table_name GROUP BY field_name */
 
-                                                $result=mysqli_query($con,"SELECT * FROM product WHERE 	number=$number_broduct /* GROUP BY number  */");
+                                                $result=mysqli_query($con,"SELECT * FROM product WHERE 	id=$number_broduct /* GROUP BY number  */");
                                                 while($row=mysqli_fetch_assoc($result)){
                                                     $number_repo=$row['id_repo'];
                                                     $result2=mysqli_query($con,"SELECT * FROM repository WHERE id=$number_repo /* GROUP BY number  */   ");

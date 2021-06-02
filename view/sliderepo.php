@@ -37,7 +37,7 @@
         <ul>
             <li> <a href="../view/repository.php">  مشاهدة منتجات </a></li>
             <li> <a href="../view/add_product.php"> اضافه منتج</a></li>
-            <li> <a href="#">  طلب تحميل</a></li>
+            <li> <a href="update_repo.php">  طلب تحميل</a></li>
             
             <li> <a href="../logout.php"> تسجيل الخروج</a></li>
         </ul>

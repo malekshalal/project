@@ -5,7 +5,7 @@
         die();
     }
     include "../host/connection.php";
-    $query="SELECT * FROM product GROUP BY number ";
+    $query="SELECT * FROM product GROUP BY id ";
     $result=mysqli_query($con,$query);
 
  

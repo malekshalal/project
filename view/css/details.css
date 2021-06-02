@@ -62,7 +62,10 @@ table{
 td{
     text-align: center;
 }
-
+.input{
+    width: 5%;
+    text-align: center;
+}
 
 .title{
     display: inline-block;

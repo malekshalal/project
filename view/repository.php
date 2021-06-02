@@ -57,11 +57,13 @@ if (!isset($_SESSION['username'])){
                        $id_cat=$row['id_cat'];
                        $result3=mysqli_query($con,"SELECT name FROM category WHERE id= $id_cat");
                        $row3=mysqli_fetch_assoc($result3);
-                       $result2=mysqli_query($con,"SELECT * FROM repository WHERE id_product= $id");
+                       $result2=mysqli_query($con,"SELECT * FROM store WHERE id_product= $id");
                        while($row2=mysqli_fetch_assoc($result2)){
 
 
-                        $id_repository=$row2['id'];
+                        $id_repository=$row2['id_repo'];
+                        $get_repo=mysqli_query($con,"SELECT * FROM repository WHERE id= $id_repository");
+                        while($row5=mysqli_fetch_assoc($get_repo)){
                        
 
                         
@@ -72,8 +74,8 @@ if (!isset($_SESSION['username'])){
                             <td  data-label="طباعة تقرير"><a class="btn" href="../view/report.php?id=<?php echo $id?>&&id_repo=<?php echo $id_repository?>"><i class="fas fa-file-contract"></i></a></td>
                             <td data-label=" السعر"><?php echo $row['price']  ?></td>
                             <td  style=" background-color:<?php echo $row['color'] ?>" data-label=" اللون">اللون</td>
-                            <td data-label=" الكميه المتوفه"><?php echo $row2["quantity"]   ?></td>
-                            <td data-label="اسم المخزن "><?php echo $row2["name"]   ?> </td>
+                            <td data-label=" الكميه المتوفه"><?php echo $row5["quantity"]   ?></td>
+                            <td data-label="اسم المخزن "><?php echo $row5["name"]   ?> </td>
                             <td data-label=" اسم الصنف"><?php echo $row3['name']?> </td>
                             <td data-label=" اسم المنتج"><?php echo $row['name']   ?> </td>
                             <td data-label="#"><?php echo $i;      ?></td>
@@ -92,6 +94,7 @@ if (!isset($_SESSION['username'])){
                         $i++;
                        }
                      } 
+                    }
                     ?>
                     </tbody>
                 
