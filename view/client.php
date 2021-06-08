@@ -36,40 +36,49 @@ if (!isset($_SESSION['username'])){
 
  
    
-    <section>
+<section>
         
-    <div class="container">
-
+        <div class="container">
     
-        <?php
-       if (mysqli_num_rows($result)>0){
-        while( $category=mysqli_fetch_assoc($result)){
-            
-            
+        
+            <?php
+           $query2="SELECT * FROM category WHERE Special = 1  ";
+           $result2=mysqli_query($con,$query2);
+           
+    
+           if(mysqli_num_rows($result2)>0){
+               while( $cat=mysqli_fetch_assoc($result2)){
+    
+      ?>
+       <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4> <?php echo $cat['name'];?> </h4>
+    
+                   
+           <img src="../img/<?php echo $cat['image'] ?>" alt="">
+    
+           
+                   
+       </div>
+       <?php
+                   }
             ?>
-            
-            
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" >
-            <h4><a href="./product.php?id=<?php echo $category['id'];?>"><?php echo $category['name'];?></a></h4></div>
-            
-        <?php
-        }
-        ?>
-         <?php
-         }else{
-            echo '<script type="text/javascript">';
-            echo 'window.alert("لا يوجد منتجات حاليا")';  
-            echo '</script>';  
-         }
-         ?>
-        
-        
-        
-        
-
-
+             <?php
+             }else{
+                echo '<script type="text/javascript">';
+                echo 'window.alert("لا يوجد منتجات حاليا")';  
+                echo '</script>';  
+               echo' <center><div class="box" style=" width:67%; "  ><h4 style ="color:red;font-size: 22px;">لايوجد منتجات متوفره حاليا </h4></div></center>';
+             }
+             ?> 
+    
     </div>
-    </section>
+            
+            
+            
+            
+    
+    
+        </div>
+        </section>
 
 
    

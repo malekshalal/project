@@ -37,18 +37,24 @@ if (!isset($_SESSION['username'])){
 
     
         <?php
-       if (mysqli_num_rows($result)>0){
-        while( $category=mysqli_fetch_assoc($result)){
-            
-            
-            ?>
-            
-            
-            <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" >
-            <h4><a href="./product.php?id=<?php echo $category['id'];?>"><?php echo $category['name'];?></a></h4></div>
-            
-        <?php
-        }
+       $query2="SELECT * FROM category WHERE Special = 1  ";
+       $result2=mysqli_query($con,$query2);
+       
+
+       if(mysqli_num_rows($result2)>0){
+           while( $cat=mysqli_fetch_assoc($result2)){
+
+  ?>
+   <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4> <?php echo $cat['name'];?> </h4>
+
+               
+       <img src="../img/<?php echo $cat['image'] ?>" alt="">
+
+       
+               
+   </div>
+   <?php
+               }
         ?>
          <?php
          }else{
