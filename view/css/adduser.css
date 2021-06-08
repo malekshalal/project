@@ -5,16 +5,43 @@
 }
 @import url(https://fonts.googleapis.com/earlyaccess/amiri.css);
 body{
-    background-image: url(../css/image/shutterstock.jpg);
-    background-position:top top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    
     font-family: 'Amiri', serif;
    
 
 }
-
+@media screen and (max-width: 999px )  {
+   
+   
+    /* to perfect image in all screen size  */
+   html { 
+    background:url(../css/image/shutterstock.jpg);
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   
+   }
+ 
+   @media screen and (min-width: 1000px) {
+ 
+ 
+    /* to perfect image in all screen size  */
+   html { 
+    background:url(../css/image/shutterstock.jpg);
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   
+   
+   }
 .regform{
     margin-top: 40px;
     width: 800px;

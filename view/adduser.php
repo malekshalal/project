@@ -14,6 +14,41 @@
     <link rel="icon" href="../view/css/image/logo.png">
     <link rel="stylesheet" href="../view/css/adduser.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+    
+@media screen and (max-width: 999px )  {
+   
+   
+   /* to perfect image in all screen size  */
+  html { 
+   background:url(../view/css/image/dark-paper.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  
+  
+  
+  }
+
+  @media screen and (min-width: 1000px) {
+
+
+   /* to perfect image in all screen size  */
+  html { 
+   background:url(../view/css/image/dark-paper.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  
+  
+  }
+    </style>
     <title>مستخدم جديد/Taqaddom Scales Co. Lts.</title>
 </head>
 <body>

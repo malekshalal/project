@@ -180,7 +180,7 @@ if (isset($_POST['submit'])) {
 			echo'<table ">';
 				echo'<tr>';
 					echo'<td><h6 class="color" style=" background-color:'.$_SESSION['color'].'">اللون</h6></td>';
-					echo'<td> <h4 class="contint">'.$lingth.' cm</h4></td>';
+					echo'<td> <h4 class="contint">'.$_SESSION['length'].' cm</h4></td>';
 					echo'<td><h3 class="title">:الطول المدخل</h3></td>';
 					echo'<td><h4 class="contint">'.$w.'cm</h4></td>';
 					echo'<td><h3 class="title">:العرض المختار</h3></td>';
