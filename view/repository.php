@@ -62,7 +62,8 @@ if (!isset($_SESSION['username'])){
 
 
                         $id_repository=$row2['id_repo'];
-                        $get_repo=mysqli_query($con,"SELECT * FROM repository WHERE id= $id_repository");
+                        $user=$_SESSION['id'];
+                        $get_repo=mysqli_query($con,"SELECT * FROM repository WHERE id= $id_repository AND id_user=$user");
                         while($row5=mysqli_fetch_assoc($get_repo)){
                        
 

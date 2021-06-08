@@ -11,15 +11,23 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحميل الطلب</title>
 </head>
-<!-- onload="print()"
- --><body  >
+<!-- 
+ -->
     <?php
     
     include "../host/connection.php";
+    include "./sliderepo.php";
+    if(isset($_POST['print'])){
+       echo' <body onload="print()" >';
+    }else{
+        echo' <body>';
+    }
     if(!isset($_GET['id'])){
         header("location:../view/update_repo.php");
-    
+        
+
     }
+
    
 	$id=$_GET['id'];
     $query = "SELECT * FROM requests WHERE id=$id";
@@ -34,6 +42,7 @@ session_start();
     $c7=$row['num7'];
     $c8=$row['num8'];
 	$date_end=$row['end_date'];
+   
 
 
 
@@ -54,6 +63,9 @@ session_start();
     $l6=$row3['l6'];
     $l7=$row3['l7'];
     $l8=$row3['l8'];
+    $product=mysqli_query($con,"SELECT * FROM product WHERE  id=$lingth");
+    $product_row=mysqli_fetch_assoc($product);
+    $select_repo=mysqli_query($con,"SELECT * FROM store WHERE id_product =$lingth");
    
     ?>
     <img src="../view/css/image/Screenshot-5010ca2c-a01b-11eb-9b63-2e8e01ead2da.png" alt="">
@@ -69,17 +81,19 @@ session_start();
 					
 					<td><h4 class="contint"></h4></td>
 					<td><h3 class="title"><?php echo $row2["width"];?>:العرض المختار</h3></td>
+                    <td><h3 class="title">المنتج المختار:<?php echo $product_row['name'];?></h3></td>
                     
 				</tr>
 			</table><br><hr>
 		</div>
         <br>
         <br>
+        
                     <?php
                     echo'<center class="print">';
                        
-					
-                         
+                        echo'<form action="../controller/update_repo.php" method="post">';
+                      
 							
 							if ( $row['num1']>0 ) {
 								echo '<div>';
@@ -101,7 +115,7 @@ session_start();
 								echo '</div>';
                                 echo '<div>';
 								
-									echo'<input class="input" name="n1"  type="number" required>';
+									echo'<input class="input" name="n1" min="1" type="number" required>';
 								
 									echo '<label for="myinput">
 									
@@ -143,7 +157,7 @@ session_start();
 								echo '</div>';
                                 echo '<div>';
 								
-                                echo'<input class="input" name="n2" type="number" required>';
+                                echo'<input class="input" name="n2" min="1" type="number" required>';
                             
                                 echo '<label for="myinput">
                                 
@@ -184,7 +198,7 @@ session_start();
 								echo '</div>';
                                 echo '<div>';
 								
-                                echo'<input class="input" name="n3" type="number" required>';
+                                echo'<input class="input" name="n3" min="1" type="number" required>';
                             
                                 echo '<label for="myinput">
                                 
@@ -225,7 +239,7 @@ session_start();
 								echo '</div>';
                                 echo '<div>';
 								
-                                echo'<input class="input" name="n4" type="number" required>';
+                                echo'<input class="input" name="n4" min="1" type="number" required>';
                             
                                 echo '<label for="myinput">
                                 
@@ -265,7 +279,7 @@ session_start();
 								echo '</div>';
                                 echo '<div>';
 								
-                                echo'<input class="input" name="n5" type="number" required>';
+                                echo'<input class="input" name="n5" min="1" type="number" required>';
                             
                                 echo '<label for="myinput">
                                 
@@ -306,7 +320,7 @@ session_start();
 								echo '</div>';
                                 echo '<div>';
 								
-                                echo'<input class="input" name="n6" type="number" required>';
+                                echo'<input class="input" name="n6" min="1" type="number" required>';
                             
                                 echo '<label for="myinput">
                                 
@@ -346,7 +360,7 @@ session_start();
 								echo '</div>';
                                 echo '<div>';
 								
-                                echo'<input class="input" name="n7" type="number" required>';
+                                echo'<input class="input" name="n7" min="1" type="number" required>';
                             
                                 echo '<label for="myinput">
                                 
@@ -387,7 +401,7 @@ session_start();
                                 echo '</div>';
                                 echo '<div>';
                                     
-                                echo'<input class="input" name="n8" type="number" required>';
+                                echo'<input class="input" name="n8" min="1" type="number" required>';
                             
                                 echo '<label for="myinput">
                                 
@@ -407,8 +421,55 @@ session_start();
                                 
                             echo '</div>';
                             }
+                            
+                            if(isset($_POST['print'])){
+                                echo ' <br><br><br><br><br>';
+                            }else{
+                               $user=$_SESSION["id"];
+                               
+                                if(mysqli_num_rows($select_repo)){
+                                    while($repo=mysqli_fetch_assoc($select_repo)){
+                                        $id_repo=$repo['id_repo'];
+                                        $repository=mysqli_query($con,"SELECT * FROM repository WHERE id=$id_repo AND id_user=$user");
+                                        $repos=mysqli_fetch_assoc($repository);
+                                        echo '<div>';
+                                        echo '<label for="myinput">
+                                
+                                
+                                        المنتج موجود في مخزن :'.$repos['name']  .'
+                                            
+                                            
+                                            
+                                            
+                                            </label>';
+                                            echo '</div>';
+                                            echo'<input class="input" name="id_repo" value="'.$id_repo.'" type="hidden" >';
+
+                                    }
+        
+                                } 
+                                        
+                                       
+                                           
+                                echo' <input  name="id_product"  value="'.$lingth.'" type="hidden" >';
+                                echo' <input name="id_req"  value="'.$id.'" type="hidden"  >';     
+                                    
+                                  
+                                echo '<button name="update">تم التحميل</button>';
+                               
+                            }
+                        echo'</form>';    
                        echo '</center>';
+                       if(isset($_POST['print'])){
+
+                    }else{
+                       echo' <form class="p" style="background: none;text-align: left;margin-left: 40px;"  method="post">';
+                           echo ' <button name="print">طباعه</button>';
+                       echo ' </form>';
+                    
+                    }
                     ?>
+                    
                     <br><br><br><br><br>
     
     </section>

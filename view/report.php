@@ -124,7 +124,7 @@ if(isset($_POST['print'])){
 <!--                 style="border-right-style: hidden;"
  -->                    
                     <td rowspan="2"><label for=""> :التوقيع</td>
-                    <td > <label style="font-size: 14px; " ><?php  echo  $row_repository['l7'] ?></label> <label for="">:<?php echo $row_lingth_product['l8']  ?> عدد قياس </label>   </td>
+                    <td > <label style="font-size: 14px; " ><?php  echo  $row_repository['l8'] ?></label> <label for="">:<?php echo $row_lingth_product['l8']  ?> عدد قياس </label>   </td>
                     <td > <label style="font-size: 14px;" ><?php  echo  $row_repository['l7'] ?></label> <label for="">:<?php echo $row_lingth_product['l7']  ?> عدد قياس </label>   </td>
                 </tr>
 

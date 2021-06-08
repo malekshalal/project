@@ -62,7 +62,7 @@ if(isset($_POST['creat'])){
           
            $insert_story=mysqli_query($con,"INSERT INTO store (id_repo,id_product) VALUES('$highest_id','  $number') ");
           
-         
+           header("Location:../view/add_lingth_product.php?id_product=$number");
      
         }
 

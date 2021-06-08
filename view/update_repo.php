@@ -61,7 +61,7 @@ html {
     <?php
         include "./sliderepo.php";
         $result=mysqli_query($con,"SELECT * FROM requests WHERE status=2");
-        $row=mysqli_fetch_assoc($result);
+        
     ?>
     <section>
 <br>
@@ -87,6 +87,11 @@ html {
            <tbody id="user_grid">
              	
               <tr>
+              <?php
+                while($row=mysqli_fetch_assoc($result)){
+
+
+                ?>
 
                         <td><a href="../view/details_requ.php?id=<?php echo $row['id']?>"><i class="fas fa-info" ></i></a></td>
                         
@@ -108,6 +113,9 @@ html {
                     ?>
                    </td>
                    <th scope="row"><?php echo $row['id']?></th>
+                   <?php
+                }
+                   ?>
             </tr>
               
 
