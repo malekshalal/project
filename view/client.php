@@ -50,14 +50,14 @@ if (!isset($_SESSION['username'])){
                while( $cat=mysqli_fetch_assoc($result2)){
     
       ?>
-       <div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4> <?php echo $cat['name'];?> </h4>
+       <a href="../view/product.php?id=<?php echo $cat['id'];?>"><div class="box"  style="text-overflow: ellipsis;  overflow: hidden;" ><h4> <?php echo $cat['name'];?> </h4>
     
                    
            <img src="../img/<?php echo $cat['image'] ?>" alt="">
     
            
                    
-       </div>
+       </div></a>
        <?php
                    }
             ?>
